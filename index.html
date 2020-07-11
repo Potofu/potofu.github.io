@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BMS &lt;-&gt; uP</title>
+</head>
+<body>
+<input type="text" id="input" size="60">
+<div id="output"></div>
+<script>
+var input = document.getElementById('input');
+var div = document.getElementById('output');
+
+var onChange = function(){
+    var text = input.value;
+    if(text[0]==='('){
+        text = text.slice(1,-1);
+        div.textContent = text.split(')(').map(function(e){
+            var ret = [];
+            var s = e.split(',').map(function(n){
+                return +n;
+            })
+            ret[0] = s[0]+1;
+            for(var i=1; i<s.length; i++){
+                var si = s[i];
+                if(si===0){
+                    break;
+                }
+                ret[i] = s[i]+s[0]+2;
+            }
+            return ret.join(',');
+        }).join(',');
+    }else{
+        var s = text.split(',').map(function(e){
+            return +e;
+        });
+        var vs = [];
+        var v = null;
+        var pre = Infinity;
+        for(var i=0; i<s.length; i++){
+            var si = s[i];
+            if(si<=pre+1){
+                if(v){
+                    vs.push(v);
+                }
+                v = [];
+                pre = si;
+                v.push(si-1);
+            }else{
+                v.push(si-pre-1);
+            }
+        }
+        vs.push(v);
+        div.textContent = vs.map(function(v){
+            return '('+v.join(',')+')';
+        }).join('');
+    }
+};
+input.onkeydown = onChange;
+input.onkeyup = onChange;
+
+
+
+</script>
+</body>
+</html>
