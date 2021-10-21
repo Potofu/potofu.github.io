@@ -1,0 +1,2284 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image/vnd.microsoft.icon" href="resource/favicon.ico">
+		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="resource/favicon.ico">
+
+
+
+
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<title>冷凍ポトフ/Potofuarium</title>
+	</head>
+
+	<body>
+
+		<div id="header">
+			<header>
+				<h1><a href="https://potofu.github.io/r/">冷凍ポトフ</a></h1>
+			</header>
+
+			<nav>
+				<div id="navigation">
+					<a href="#link20160124">
+						<div class="link">
+							〜2016-01-24
+						</div>
+					</a>
+					<a href="#link20140821">
+						<div class="link">
+							~2014-08-21
+						</div>
+					</a>
+					<a href="#link20140209">
+						<div class="link">
+							~2014-02-09
+						</div>
+					</a>
+					<a href="#linkspecial">
+						<div class="link">
+							特設ページ
+						</div>
+					</a>
+					<a href="#linkabout">
+						<div class="link">
+							Aboutポトフ
+						</div>
+					</a>
+				</div>
+			</nav>
+
+		</div>
+
+		<div class="main" name="link20160124" id="link20160124">
+
+			<article>
+				<h2>◎A Button</h2>
+				<section>
+					<h3>説明</h3>
+					脱出ゲーム的なやつ。
+					<canvas id="js_button_canvas" width="320" height="320"></canvas>
+					<a href="https://twitter.com/share?url=https://potofu.github.io/%23link20160124&text=A Button｜冷凍ポトフ" target="_blank" onclick="setTweetText()" id="js_button_tweet" class="button" style="display:block; font-size:24px; width:306px; text-align:center; margin: 20px 0 0; padding: 10px;">ツイートする</a>
+				</section>
+			</article>
+
+		</div>
+
+		<div class="main">
+
+			<article>
+				<h2>◎ひろえポメの毛</h2>
+				<section>
+					<h3>説明</h3>
+					<a href="#linkwakamectest">わかめクリッカー（テスト版）</a>の続編？<br>
+					プレイは<a href="#linkpomeke">「ひろえポメの毛」特設ページ</a>から。<br>
+					<img src="resource/pomeke0.png" alt="Pome no ke ga ochiteiru" height="320" width="320" style="margin-top:1.5em;">
+					<img src="resource/pomeke1.png" alt="Pome no ke no kedama" height="320" width="320" style="margin-top:1.5em; margin-left:15px;">
+				</section>
+			</article>
+
+		</div>
+
+		<!-- 20140821 -->
+		<div class="main" name="link20140821" id="link20140821">
+
+			<article>
+				<h2>◎水玉つくるやつ</h2>
+				<section>
+					<h3>説明</h3>
+					JavaScriptの練習でつくった水玉つくるやつ。
+					<canvas id="js_mizutama_canvas" width="320" height="568"></canvas>
+					<form>
+						<input type="button" value="別なやつ" onclick="mizutama(320,568)">
+					</form>
+					画像を使ってもらう分には自由にしてくれていいけど、プログラム部分の再配布とかはやめてね。
+				</section>
+			</article>
+
+		</div>
+
+
+		<div class="main">
+
+			<article>
+				<h2>◎ポトフシミュレーター</h2>
+				<section>
+					<h3>説明</h3>
+					具材を選んでポトフを作りましょう。<br>
+					※このとおりに作ればおいしくできるというわけではありません。
+
+
+					<div style="width:200px; height:250px; border-style:solid; border-width:3px; margin:20px 10px; text-align:center;">
+						<form name="js_pafsimu_paf">
+
+							<select id="js_pafsimu_gu1">
+
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+
+							</select>
+
+							<br>
+							<select id="js_pafsimu_gu2">
+
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+
+							</select>
+
+							<br>
+							<select id="js_pafsimu_gu3">
+
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+
+							</select>
+
+							<br>
+							<select id="js_pafsimu_gu4">
+
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+
+							</select>
+
+							<br>
+							<select id="js_pafsimu_gu5">
+
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+
+							</select>
+
+							<br>
+
+
+
+
+							<input type="button" value="決定！" onclick="culc()">
+
+						</form>
+
+						<span style="font-weight:bold; font-size:30pt;" id="js_pafsimu_point">X点</span><br>
+						<span style="font-weight:bold; font-size:30pt;" id="js_pafsimu_comment">コメント</span>
+
+					</div>
+					不具合あったら教えてください……
+
+				</section>
+			</article>
+
+		</div>
+
+
+		<div class="main">
+
+			<article>
+				<h2>◎ポトフ言葉</h2>
+				<section>
+					<h3>肉類</h3>
+					「ソーセージ」のポトフ言葉：恋の始まり、約束、信頼、至上の喜び、劣情、あなたを抱きしめたい<br>
+					「ベーコン（厚切り）」のポトフ言葉：平和、溢れだす幸福感、口づけ、愛を感じる<br>
+					「ベーコン（薄切り）」のポトフ言葉：奉仕、平穏、聡明<br>
+					「牛すね肉」のポトフ言葉：憧れ、見果てぬ夢、真実の愛
+					<h3>根菜類</h3>
+					「にんじん」のポトフ言葉：希望、新しい出逢い、頭の上にある<br>
+					「じゃがいも」のポトフ言葉：調和、小さなほころび<br>
+					「かぶ」のポトフ言葉：大胆不敵、保身、夢の実現
+					<h3>葉菜類</h3>
+					「セロリ」のポトフ言葉：高貴、決然たる態度<br>
+					「キャベツ」のポトフ言葉：優しさ、温もり<br>
+					「ブロッコリー」のポトフ言葉：おだやかな眼差し、儚い想い<br>
+					「ほうれんそう」のポトフ言葉：共に生きる、愛しき人
+					<h3>果菜類</h3>
+					「トマト」のポトフ言葉：自由、私だけを見て、わがまま<br>
+					「なす」のポトフ言葉：謙虚、聡明
+					<h3>その他</h3>
+					「しらたき」のポトフ言葉：無垢、潔白、あなたに染まります
+				</section>
+			</article>
+
+		</div>
+
+
+		<div class="main">
+
+			<article>
+				<h2>◎ふえろわかめ</h2>
+				わかめをふやすゲーム。<br>
+				ダウンロード等は<a href="#linkwakame">ふえろわかめ特設ページ</a>から<br>
+				<img src="resource/Wakame1.png" alt="1 Wakame GET" height="240" width="320" style="margin-top:1.5em;">
+			</article>
+
+		</div>
+
+
+		<div class="main">
+
+			<article>
+				<h2>◎おいしいポトフを食べようの会</h2>
+				思いつきと勢いで<s>特設ページ</s>を作ってしまった。<br>
+				わりとそれだけ。<br>
+				デザインに不備あるっぽいけど気にしない
+				
+				<section style="color:#999999;">
+					※「おいしいポトフを食べようの会（おいポト）」特設ページは<br>
+					移設しませんでした。以下当時のイメージ。<br>
+					<img src="resource/oipoto.png" alt="oipoto page image" width="360">
+				</section>
+			</article>
+
+		</div>
+		<!-- 20140209 -->
+		
+		<div class="main" name="link20140209" id="link20140209">
+
+			<article>
+				<h2>◎おでかけおぜうさま攻略</h2>
+				<section>
+					せっかく調べたのにお蔵入りするのももったいないので。攻略と呼べるほどのものではない。
+					<h3>関係式</h3>
+					衣装のレベルをnとした時の推定値。<br>
+					桁や定数項を間違えてる可能性はありますが、オーダーは合ってると思います。
+					<h4>速度</h4>
+					<table border="1">
+						<tr><th>衣装の名前</th><th>倍率</th><th>LVUPに必要な経験値</th><th>その他備考</th></tr>
+						<tr><td>おぜうさまドレス</td><td>0.1n+1</td><td>n*2.5E3+5E3</td><td></td></tr>
+						<tr><td>セーラー服</td><td>n+1</td><td>n*7.5E3+1E4</td><td></td></tr>
+						<tr><td>体操着</td><td>0.5n+1</td><td>n*3E4+4E4</td><td></td></tr>
+						<tr><td>紅美鈴ドレス</td><td>0.7n+1</td><td>n*5E4+7E4</td><td></td></tr>
+						<tr><td>パチュリードレス</td><td>n+1</td><td>n*3.75E6+1.25E6</td><td></td></tr>
+						<tr><td>巫女服</td><td>0.7n+1</td><td>n*7.5E4+1E5</td><td></td></tr>
+						<tr><td>メイド服</td><td>n+1</td><td>n*7.5E5+1E6</td><td></td></tr>
+						<tr><td>宇宙服</td><td>1/(n+1)</td><td>n*2.5E5+1E5</td><td></td></tr>
+						<tr><td>法被</td><td>3n</td><td>n*7.5E6+1E7</td><td></td></tr>
+						<tr><td>潜水服</td><td>1/(5n)</td><td>n*2.5E5+1E6</td><td></td></tr>
+						<tr><td>amazunダンボール</td><td>1/(10n)</td><td>n*2.5E2+1E2</td><td></td></tr>
+						<tr><td>ルーマニア軍服</td><td>0.5n^2</td><td>n^2*5E5</td><td></td></tr>
+						<tr><td>ライダースーツ</td><td>n^2</td><td>n^2*1E7</td><td></td></tr>
+						<tr><td>胴着</td><td>n^3</td><td>n^5*1E8</td><td></td></tr>
+						<tr><td>忍者服</td><td>2n^3</td><td>n^5*3E7</td><td></td></tr>
+						<tr><td>ルーミアドレス</td><td>3n</td><td>n*6E6+5E6</td><td></td></tr>
+						<tr><td>魔理沙ドレス</td><td>n^3</td><td>n^4*1E7</td><td></td></tr>
+						<tr><td>サンタ服</td><td>n+X（確認できず）</td><td>未確認（おそらく線形）</td><td>クリスマスの間だけ速度が2乗（上限あり）</td></tr>
+					</table>
+
+					<h4>クリック効果</h4>
+					<table border="1">
+						<tr><th>衣装の名前</th><th>倍率</th><th>LVUPに必要な経験値</th><th>その他備考</th></tr>
+						<tr><td>水着</td><td>5n</td><td>n*2.5E4+5E4</td><td></td></tr>
+						<tr><td>咲夜ドレス</td><td>10n</td><td>n*2E5+2E5</td><td></td></tr>
+						<tr><td>フランドレス</td><td>100n</td><td>n*7.5E5+1E6</td><td></td></tr>
+						<tr><td>小悪魔ドレス</td><td>2n</td><td>n*3.75E4+5E4</td><td></td></tr>
+						<tr><td>ナース服</td><td>10n</td><td>n*1.5E5+2E5</td><td></td></tr>
+						<tr><td>消防服</td><td>20n</td><td>n*3.75E5+5E5</td><td></td></tr>
+						<tr><td>警察服</td><td>0.1n+1</td><td>n*2.25E5+3E5</td><td>クリックLVUP速度</td></tr>
+						<tr><td>甲冑</td><td>10n^2</td><td>n^5*5E8</td><td>クリック全効果</td></tr>
+						<tr><td>ウェディングドレス</td><td>20n^2</td><td>n^5*5E8</td><td>クリック全効果</td></tr>
+						<tr><td>チルノドレス</td><td>10n^2</td><td>n^3*2E7</td><td>クリック全効果</td></tr>
+					</table>
+
+					<h4>その他</h4>
+					<table border="1">
+						<tr><th>衣装の名前</th><th>対象</th><th>倍率</th><th>LVUPに必要な経験値</th><th>その他備考</th></tr>
+						<tr><td>スモック</td><td>なし</td><td>-</td><td>n*2.5E5+1E5</td><td></td></tr>
+						<tr><td>旅人の服</td><td>旅の速度</td><td>0.1n</td><td>n*2.5E5+1E5</td><td>ブラウザを立ち上げてない時だけお散歩</td></tr>
+						<tr><td>囚人服</td><td>経験値</td><td>100n</td><td>n*1.5E4+1E4</td><td>没収確率100*(1-1/n)%</td></tr>
+						<tr><td>学生服</td><td>勉強する時間</td><td>取得経験値については未確認</td><td>1E3</td><td>指定時間以上ブラウザを閉じると経験値取得</td></tr>
+						<tr><td>羽衣</td><td>速度RNDの最大（単位[mm]）</td><td>1000n</td><td>n^2*1E5</td><td></td></tr>
+						<tr><td>レミトドレス</td><td>ひみつ☆</td><td>-</td><td>n*2.5E4</td><td>魔理沙ドレスとチルノドレスの効果を引き継ぐ？（未確認）</td></tr>
+					</table>
+					あとポッキードレスっていうのがあるみたいだけど、始めたのが遅いため未確認。
+
+					<h3>結局どれがいいの？</h3>
+					結論だけ言うとルーマニア軍服とチルノドレス。以下は補足という名の蛇足。<br style="line-height:2em;">
+
+					倍率のオーダーがO(n^m)、必要経験値のオーダーがO(n^(m+a))の時（全ての衣装においてa≧0なのでa&ne;-1）、倍率がxになるまでにかかる時間のオーダーはO(x^((a+1)/m))となった。<br>
+					つまり、最終的には、指数部分&alpha;=(a+1)/mが最小になる衣装を選べばいい（ただし、倍率が上に有界である宇宙服等を無視して議論している）。<br>
+					したがって、速度を上げるには&alpha;=1/2のルーマニア軍服（ライダースーツも&alpha;=1/2だが係数の違いによる）が、クリック全効果を上げるには&alpha;=1のチルノドレスが優れていることがわかる（クリック効果のみの場合は水着が一番いいっぽい）。<br>
+					とはいえこれはnをある程度大きくした場合なので、ある程度のレベルまでは他のもののほうが上回っているということはありえるかもしれない。でもそこまで検証してられないのでしない。<br>
+					ちなみに、a=-1を下回るとかつてあったらしい「LVを上げるほどLVを上げやすくなる」というとんでもない状況に陥ってしまうみたい。<br style="line-height:2em;">
+					最後に、私は数学科でも物理科でもないので合ってる保障はない。ただし、悪意はない。<br>
+				</section>
+			</article>
+
+		</div>
+
+
+
+		<div class="main">
+
+			<article>
+				<h2>◎クロムミョウバン育てる的なゲーム</h2>
+				<section>
+					<h3>説明</h3>
+					フォロワーさん方の会話から思いつきでつくったものです。
+					<h3>ダウンロード</h3>
+					<a href="resource/CrMyoban.zip">CrMyoban.zip(17KB)</a><br style="line-height:2em;">
+					ダウンロードするのに課金は不要ですが，作った人のほしいものリストを紹介しておきます。<br>
+					&rarr;<a href="http://www.amazon.co.jp/registry/wishlist/16QL6G4OBAJEE/">ポトフのほしいものリスト（Amazon）</a><br>
+					特に意味はありませんとも。
+					<h3>スクリーンショット</h3>
+					<img src="resource/Myoban1.png" alt="chrome myoban" height="269" width="248">
+				</section>
+			</article>
+
+		</div>
+
+		<div class="main">
+
+			<article>
+				<h2>◎ミョウバン育てる的なゲーム</h2>
+				<section>
+					<h3>説明</h3>
+					フォロワーさんの発言をもとに思いつきでつくったものです。
+					<h3>ダウンロード</h3>
+					古い版も一緒に入ってます。<br>
+					<a href="resource/Myoban.zip">Myoban.zip(20KB)</a>
+					<h3>スクリーンショット</h3>
+					<img src="resource/Myoban0.png" alt="myoban" height="269" width="248">
+				</section>
+			</article>
+
+		</div>
+
+		<div class="main">
+
+			<article>
+				<h2>◎ポトフリメイク料理</h2>
+				<section>
+					<h3>ポトフリメイクカレー</h3>
+					ポトフ＋カレールウ
+					<h3>ポトフリメイクケークサレ</h3>
+					<img src="resource/cakesale.jpg" alt="Pot-au-feu Remake Cake Salé" height="240" width="240"><br>
+					ポトフ＋ホットケーキミックス
+				</section>
+				<section style="margin-top:1em;">
+					随時更新予定！<br>
+					また、アイデアも募集しています！
+				</section>
+			</article>
+
+		</div>
+
+		<div class="main">
+
+			<article>
+				※この項目はジョークです※
+				<h2>◎第38回ポトフ工学会予稿</h2>
+
+				<h3 class="center serif">
+					便器の使用における便座動作必要性の性差についての研究<br>
+					Investigation of Sex&nbsp;Difference in Needs for Seat&nbsp;Motion on Using&nbsp;Toilet
+				</h3>
+
+				<div class="center serif">
+					<span class="bold">
+						ポトフ（国際ポトフ技術総合研究所）<br>
+						Potofu<br>
+						Research&nbsp;Institute for International Pot-au-feu Technology<br>
+						Twitter:<a href="https://twitter.com/po_tau_feu" style="color:#000000;">@po_tau_feu</a>
+					</span>
+				</div>
+
+				<section style="margin-top:1em;" class="serif">
+
+
+					<p>近年，洋式便器の普及に伴い，男性が小便時に便座を上げて用を足すことに対し，便座を上げる必要のない女性からの不満の声が上がっている[1]．男性が座って用を足すことでその性差を解消しようという案も考えられたが[2]，伝統的な小便法の断滅につながるという問題も存在し[3]，直接的な解決には至っていない．本研究では，この問題の解決する糸口を掴むために，便座動作必要性についての理論的な計算を行った．</p>
+
+					<p>男性の小便率と大便率，女性の使用率をそれぞれs,d,fと置く（s+d+f=1）と，便座が上がっている確率がs，下がっている確率がf+d=1-sとなる．男性が入室した場合のうち，小便する確率がs/(s+d)=s/(1-f)，大便する確率がd/(s+d)=(1-f-s)/(1-f)と与えられ，先ほどの便座が上がったり下がったりしている確率と組み合わせると，男性が動作をしなければならない確率s/(1-f)・(1-s)+(1-f-s)/(1-f)・s=s(2-2s-f)/(1-f)が得られる．また，女性が便座を下げなければならない確率がsであることから，s(2-2s-f)/(1-f)&lt;sであり，かつ，男性の小便率sが有限の値である時，即ち，(2-2s-f)/(1-f)&lt;1の時，男性の便座動作必要性が女性の便座動作必要性を下回る．この式を変形すると(1-2s)/(1-f)&lt;0が得られ，1-f=s+d&gt;0より，男性の便座動作必要性が女性の便座動作必要性を下回るためには，s&gt;1/2でなければならないという結果が得られた．この結果に女性のトイレ使用率が関係していないことは極めて興味深い結果である．また，この関係の転換点であるs=1/2は，男性の用を足しやすさを考慮すると十分起こりえる確率であり，便座動作必要性の性差を解消するためには必要不可欠な研究対象であることが示唆された．例えば，s=1/2を保つようにトイレを使用すれば，全体で見れば男女で便座動作をする回数に差はなくなるという結果が得られる．</p>
+
+					<p>講演では，予稿の内容に加え，小便器の存在や男性が座って用を足す場合，および大便時の和式様使用なども考慮し，より発展的な内容について発表する予定である．</p>
+				</section>
+
+				<section style="margin-top:1em;" class="serif">
+
+					[1]Potofu <span class="italic">et al.</span>, Pot-au-feu Tech. Lett. <span class="bold">72</span>(2013)14241.<br>
+					[2]Potofu <span class="italic">et al.</span>, Pot-au-feu Exp. <span class="bold">44</span>(2013)440329.<br>
+					[3]Potofu <span class="italic">et al.</span>, Pot-au-feu Tech. Lett. <span class="bold">71</span>(2013)14065.
+				</section>
+			</article>
+
+		</div>
+
+		<h2 name="linkspecial" id="linkspecial">特設ページ</h2>
+
+		<div class="main pome" name="linkpomeke" id="linkpomeke">
+
+			<article>
+				<div style="margin-top:10px;">
+					<span style="color:red; font-weight:bold;">※セーブ機能はありません！　注意してプレイしてください！</span>
+				</div>
+
+				<h2>◎ひろえポメの毛</h2>
+				<section>
+					<div>
+						<div style="border:solid 2px black; display:inline-block; height:320px;"><canvas id="js_pomeke_canvas_1" width="320" height="320" onselectstart="return false;"></canvas></div>
+						<div style="border:solid 2px black; display:inline-block; height:320px;"><canvas id="js_pomeke_canvas_2" width="320" height="320" onselectstart="return false;"></canvas></div>
+						<div style="width:320px; height:320px; overflow-y:scroll; display:inline-block;" id="js_pomeke_log">ひろえポメの毛スタート！</div>
+					</div>
+					<span style="font-size: 20pt; font-weight:bold;" class="vamiddle"><span id="js_pomeke_pp">0</span>pp</span>
+					<a href="https://twitter.com/share?url=https://potofu.github.io/%23linkepomeke&text=ひろえポメの毛｜冷凍ポトフ" onClick="tweetPomeke();" id="js_pomeke_tweet" class="button" target="_blank">ツイート</a>
+
+					<div style="margin-top:6px;">
+						<table>
+							<tr><th>赤いポメフード</th><th>緑のポメフード</th><th>青のポメフード</th></tr>
+							<tr>
+								<td><span id="js_pomeke_food-num_r">0</span>個</td>
+								<td><span id="js_pomeke_food-num_g">0</span>個</td>
+								<td><span id="js_pomeke_food-num_b">0</span>個</td>
+							</tr>
+							<tr>
+								<td><span id="js_pomeke_food-price_r">10</span>pp<br><input type="button" value="購入" onClick="buyFood('r')"></td>
+								<td><span id="js_pomeke_food-price_g">10</span>pp<br><input type="button" value="購入" onClick="buyFood('g')"></td>
+								<td><span id="js_pomeke_food-price_b">10</span>pp<br><input type="button" value="購入" onClick="buyFood('b')"></td>
+							</tr>
+								<td>ポメラニアンが<br>活動的になります。</td>
+								<td>ポメラニアンの<br>代謝がよくなります。</td>
+								<td>ポメラニアンの<br>毛が生え変わり<br>やすくなります。</td>
+						</table>
+
+						<table>
+							<tr><th>ポメランク</th></tr>
+							<tr>
+								<td><span id="js_pomeke_rank">0</span></td>
+							</tr>
+							<tr>
+								<td><span id="js_pomeke_rank-p">1</span>pp<br><input type="button" value="UP!" onClick="upRank()"></td>
+							</tr>
+							<tr>
+								<td><span id="js_pomeke_rank-c">ポメラニアンが<br>自分で歩くように<br>なります。</span></td>
+							</tr>
+						</table>
+					</div>
+
+
+					<h3>遊び方</h3>
+					ポメラニアンが落とす毛を集めて毛玉を作りましょう。<br>
+					ポメの毛からもらえるpp（ポメポイント）でポメフードを買ったりポメランクを上げたりできます。<br>
+					ポメフードの数に応じてもらえるppが変わります。<br>
+					ポメランクを上げるとポメラニアンの身体能力が変わったりします。<br>
+					最初はポメラニアンは動く気がないので押してあげましょう。
+
+
+					<h3>操作方法</h3>
+					W（または↑）：上へ移動<br>
+					A（または←）：左へ移動<br>
+					S（または↓）：下へ移動<br>
+					D（または→）：右へ移動<br>
+					クリック：クリックした方向へ1歩移動（左または上画面）、アイテムの購入
+				</section>
+			</article>
+
+		</div>
+
+		<div class="main wakame" name="linkwakamectest" id="linkwakamectest">
+			<article>
+				<h2>◎わかめクリッカー（テスト版）</h2>
+				<section>
+					<div>
+						<canvas id="js_wakametest_canvas" width="320" height="320" style="border:solid 2px black; display:inline;"></canvas>
+						<div style="width:240px; height:320px; overflow-y:scroll; display:inline-block;" id="js_wakametest_log">わかめクリッカースタート！</div>
+					</div>
+					<span style="font-size: 20pt; font-weight:bold;" class="vamiddle"><span id="js_wakametest_wakame_num">0</span>わかめ</span>
+					<a href="https://twitter.com/share?url=https://potofu.github.io/r/%23linkwakamectest&text=わかめクリッカー（テスト版）｜冷凍ポトフ" onClick="tweetWakame();" id="js_wakame_tweet" class="button" target="_blank">ツイート</a>
+					<input type="button" class="button vamiddle" value="セーブ" onClick="manualSave()">
+					<input type="button" class="button vamiddle" value="ロード" onClick="load()">
+					<span class="vamiddle"><input type="checkbox" id="js_wakametest_asave">自動セーブ</span>
+
+					<table>
+						<tr><th>アイテム</th><th>価格</th><th style="width:4em;">個数</th><th>説明</th></tr>
+						<tr><td>わかめ</td><td>1<br><input type="button" value="購入" onClick="buyItem(1)"></td><td id="js_wakametest_item1">0</td><td>わかめです。<br>持ってるともらえるわかめが僅かに増えます。</td></tr>
+						<tr><td>100倍わかめ</td><td>100<br><input type="button" value="購入" onClick="buyItem(2)"></td><td id="js_wakametest_item2">0</td><td>通常のわかめの100倍です。<br>持ってるともらえるわかめがちょっと増えます。</td></tr>
+						<tr><td>10000倍わかめ</td><td>10,000<br><input type="button" value="購入" onClick="buyItem(3)"></td><td id="js_wakametest_item3">0</td><td>通常のわかめの10000倍です。<br>持ってるともらえるわかめが少し増えます。</td></tr>
+						<tr><td>100万倍わかめ</td><td>1,000,000<br><input type="button" value="購入" onClick="buyItem(4)"></td><td id="js_wakametest_item4">0</td><td>通常のわかめの100万倍です。<br>持ってるともらえるわかめが増えます。</td></tr>
+						<tr><td>1億倍わかめ</td><td>100,000,000<br><input type="button" value="購入" onClick="buyItem(5)"></td><td id="js_wakametest_item5">0</td><td>通常のわかめの1億倍です。<br>持ってるともらえるわかめが微妙に増えます。</td></tr>
+						<tr><td>クリアわかめ</td><td>10,000,000,000<br><input type="button" value="購入" onClick="buyItem(6)"></td><td id="js_wakametest_item6">0</td><td>クリアなわかめです。<br><span id="js_wakametest_mess">わかめのふえ方はチート級かも？</span></td></tr>
+						<tr><td>わかめブースター</td><td><span id="js_wakametest_booster">1000</span><br><input type="button" value="購入" onClick="buyItem(0)"></td><td id="js_wakametest_item0">0</td><td>わかめをブーストしてもらえるわかめを増やします。<br>買えば買うほど値段が上がります。</td></tr>
+					</table>
+
+					<h3>遊び方</h3>
+					四角の中をクリックするとわかめがふえます。<br>
+					アイテムを買ったりして頑張ってわかめをふやしましょう。<br>
+					連打ツールとか使うとわりと処理落ちするので注意。<br>
+					あと連打ツール使っちゃうと30分かからず終わってしまうので微妙に非推奨です。<br style="line-height:1.5em;">
+					原型となった<a href="#linkwakame">『ふえろわかめ』はこちら</a>！
+
+					<h3>セーブについて</h3>
+					「セーブ」を押すとセーブ、「ロード」を押すとロードします。<br>
+					また、「自動セーブ」にチェックを入れておくと自動でセーブされます。<br>
+					リセットするにはブラウザを更新してください。
+
+				</section>
+			</article>
+
+		</div>
+
+		<div class="main" name="linkwakame" id="linkwakame">
+
+			<article>
+				<h2>◎ふえろわかめ</h2>
+				<section>
+					<h3>説明</h3>
+					わかめをふやすゲームです。<br>
+					最初は陣取りゲームを作ってたはずなのに途中からおかしくなった……<br style="line-height:1.5em;">
+					<a href="#linkwakamectest">わかめクリッカー（テスト版）はこちら</a>！<br style="line-height:1.5em;">
+<!--
+<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+-->
+					<h3>ダウンロード</h3>
+					<a href="resource/FueroWakame.zip">FueroWakame.zip(2.4MB)</a>
+					<h3>スクリーンショット</h3>
+					※画像は開発時のものもあります。<br style="line-height:2.5em">
+					<img src="resource/Wakame0.png" alt="FueroWakame START" height="240" width="320">
+					<img src="resource/Wakame1.png" alt="1 Wakame GET" height="240" width="320">
+					<img src="resource/Wakame2.png" alt="Wakame SHOP" height="240" width="320">
+					<img src="resource/Wakame3.png" alt="ichi oku bai WAKAME" height="240" width="320">
+					<img src="resource/Wakame4.png" alt="Akuma no chikara" height="240" width="320">
+
+					<h3>更新履歴</h3>
+					2014/09/15 v1.1 アイテム・イベントの追加、わかめクリッカー（テスト版）とのコラボ要素追加<br>
+					2014/03/02 v1.0 公開開始
+				</section>
+			</article>
+
+		</div>
+
+		<div class="main" name="linkabout" id="linkabout">
+			<article>
+				<h2>◎冷凍ポトフについて</h2>
+				<section>
+					<h3>説明</h3>
+					ポトフおいしいけど冷凍したらおいしくなさそう。
+					<h3>その他</h3>
+					解凍したら細胞壁こわれておいしいとかはありそう。
+				</section>
+			</article>
+
+		</div>
+
+		<div class="main">
+			<article>
+				<h2>◎コンテンツ情報</h2>
+				<section>
+					<h3>開発中？</h3>
+					わかめクリッカー（正式版）<br>
+					ポトフと不思議のダンジョン
+					<h3>更新履歴</h3>
+					<div id="js_oritatami_1" style="margin-bottom:15px;">
+						2021/10/21 冷凍ポトフをPotofuariumへ移設<br>
+						2016/01/24 「A Button」<br>
+						2015/07/20 お気に入りアイコンを設定<br>
+						2015/01/04 「ひろえポメの毛」<br>
+						2014/10/22 コンテンツ情報を作成<br>
+						2014/09/15 「わかめクリッカー（テスト版）」<br>
+						2014/08/22 「ポトフシミュレータ」<br>
+						2014/08/12 「水玉つくるやつ」<br>
+						2014/03/26 「ポトフ言葉」<br>
+						2014/03/02 「ふえろわかめ」<br>
+						2014/02/20 <s>「おいしいポトフを食べようの会」</s><br>
+						2014/02/09 「おでかけおぜうさま攻略」、メールフォームを設置<br>
+						2014/01/24 「クロムミョウバン育てる的なゲーム」<br>
+						2014/01/16 「ポトフリメイク料理」<br>
+						2013/12/16 「第38回ポトフ工学会予稿」、文字コードをShift-JISからUTF-8に変更<br>
+						2013/11/27 ホームページ開設、「ミョウバンを育てる的なゲーム」<br>
+					</div>
+					<span onclick="switchOrit(1,5);" id="js_oritatami_1_toggle" class="button">JavaScriptが有効ならこのボタンを使います</span>
+				</section>
+			</article>
+
+		</div>
+
+		<div id="footer">
+			<div class="profile">
+				<h2>◎ポトフ</h2>
+				<img src="resource/potaufeu.jpg" alt="profile" width="300" height="300"><br>
+				<h3>連絡先</h3>
+				・Twitter:<a href="https://twitter.com/po_tau_feu">@po_tau_feu</a><br>
+				<a href="http://twilog.org/po_tau_feu">Twilog</a><br>
+				・note:<a href="https://note.mu/potofu">potofu</a>
+			</div>
+
+			<footer>
+				Copyright &copy; 2013 - 2021 <a class="copy" href="https://potofu.github.io/">冷凍ポトフ/Potofuarium</a> All Rights Reserved.
+			</footer>
+		</div>
+		<style>
+article, aside, figure, figcaption, footer, header, hgroup, nav, section{
+	display : block;
+}
+canvas{
+	display : block;
+}
+
+body{
+	background-color : #99ccff;
+	color : #000000;
+}
+div#navigation{
+	margin-bottom : 10px;
+}
+div.link{
+	float : left;
+	background-color : #ffffff;
+	padding : 15px 20px;
+	margin : 10px 10px 20px 0px;
+	border-style : solid;
+	border-width : 4px;
+	border-color : #000066;
+	border-radius: 20px;
+
+}
+
+
+div.main{
+	background-color : #ffffff;
+	min-width : 320px;
+	padding-left : 30px;
+	padding-right : 30px;
+	padding-bottom : 30px;
+	margin-top : 20px;
+	margin-bottom : 20px;
+	border-style : solid;
+	border-width : 4px;
+	border-color : #000066;
+	border-radius: 20px;
+	clear : left;
+}
+
+div.profile{
+	background-color : #ffffff;
+	min-width : 320px;
+	padding-left : 30px;
+	padding-right : 30px;
+	padding-bottom : 30px;
+	margin-top : 20px;
+	margin-bottom : 20px;
+	border-style : solid;
+	border-width : 4px;
+	border-color : #000066;
+	border-radius: 20px;
+}
+
+h1{
+	margin-top : 30px;
+	margin-left : 30px;
+}
+h1 a{
+	color : #000066;
+}
+h1 a:hover{
+	text-decoration : none;
+	color : #333399;
+}
+
+h3{
+	margin-bottom : 0.3em;
+}
+
+a{
+	text-decoration : none;
+	color : #333399;
+}
+a:hover{
+	text-decoration : underline;
+	color : #6699cc;
+}
+a.copy{
+	text-decoration : none;
+	color : #000000;
+}
+a.copy:hover{
+	text-decoration : underline;
+	color : #000000;
+}
+
+p{
+	margin : 0;
+	text-indent : 1em;
+}
+
+.center{
+	text-align: center;
+}
+.bold{
+	font-weight : bold;
+}
+.italic{
+	font-style : italic;
+}
+.serif{
+	font-family : serif;
+}
+
+.button{
+	color : #666666;
+	background-color : #ffffff;
+	padding : 2px 5px;
+	border : solid 2px #666666;
+	vertical-align : middle;
+	font-family : san-serif;
+	font-size : 100%;
+	margin-left : 10px;
+	cursor: pointer;
+}
+.button:hover{
+	text-decoration : none;
+	color : #333333;
+	background-color : #cccccc;
+	border-color : #333333;
+}
+.pome th{
+	width : 160px;
+	border : 1px solid #666666;
+	border-right-width : 2px;
+	border-bottom-width : 3px;
+	border-bottom-style : double;
+	text-align : center;
+}
+.pome td{
+	border : 1px solid #666666;
+	border-right-width : 2px;
+	text-align : center;
+}
+.pome table{
+	display : inline-table;
+	border : 3px solid #000000;
+	border-collapse : collapse;
+}
+
+.pome .vamiddle{
+	vertical-align : middle;
+}
+.wakame table{
+	border : 3px solid #000000;
+	border-collapse : collapse;
+}
+.wakame th,td{
+	border : 1px solid #666666;
+	text-align : center;
+}
+.wakame ::selection {
+	background-color : #ffffff;
+	color : #000000;
+}
+
+.wakame .vamiddle{
+	vertical-align : middle;
+}
+	</style>
+	<script>
+
+//pafsimu.js
+var gu_list = new Array("ソーセージ","ベーコン（厚切り）","ベーコン（薄切り）","牛すね肉","にんじん","じゃがいも","かぶ","セロリ","キャベツ","ブロッコリー","ほうれんそう","トマト","なす","しらたき");
+var gu_point = [	[10,3,0,2,3],
+					[15,5,0,1,7],
+					[12,2,0,0,6],
+					[16,4,0,0,4],
+					[7,0,6,4,0],
+					[3,0,2,10,0],
+					[2,0,5,9,1],
+					[6,0,11,0,0],
+					[4,0,7,6,0],
+					[6,0,8,2,0],
+					[7,0,9,1,0],
+					[3,0,6,1,1],
+					[4,0,5,1,0],
+					[0,0,0,5,0]];
+
+
+function setGu(num){
+	for(var i=0;i<14;i++){
+		document.getElementById("js_pafsimu_gu"+num).options[i].text = gu_list[i];
+	}
+}
+
+function culc(){
+	var index;
+	var p = [0,0,0,0,0];
+	var point;
+	var nq = 0;
+	for(var i=1;i<=5;i++){
+		index = document.getElementById("js_pafsimu_gu"+i).selectedIndex;
+		for(var j=0;j<5;j++){
+			p[j] += gu_point[index][j];
+			if(j==1){
+				if(gu_point[index][j]!=0){
+					nq++;
+				}
+			}
+		}
+	}
+	
+
+	var str = "ふつう";
+
+	point = p[0]+Math.floor(p[0]*p[3]/6.0);
+
+	if(p[2]>30){
+		str = "じみ";
+	}
+	if(p[1]>10){
+		str = "くどい";
+		point = Math.floor(point/2.0) - p[1]*3;
+	}
+	if(p[4]>10){
+		str = "からい";
+		point = Math.floor(point/2.0)-p[4]*3;
+	}
+	if(p[0]<=10){
+		str = "まずい";
+	}
+	if(str=="ふつう"){
+		if(nq!=0){
+			point += Math.floor(p[2]/(1.7*nq));
+			point -= p[1]*(nq+1)*(nq-1);
+		}
+	}
+	point = Math.floor(point/2.0)
+
+	if(point>=80){
+		str = "うまい";
+	}
+	document.getElementById("js_pafsimu_point").textContent= point+"点";
+	document.getElementById("js_pafsimu_comment").textContent= str;
+}
+//pafsimu end
+window.addEventListener('load',function(){
+	for(var i=1; i<=5; i++){
+		setGu(i);
+	}
+});
+
+//button.js
+var AButton = {};
+AButton.img_off = new Image();
+AButton.img_off.src = "resource/js_button_off.png";
+AButton.img_on = new Image();
+AButton.img_on.src = "resource/js_button_on.png";
+AButton.img_bomb = new Image();
+AButton.img_bomb.src = "resource/js_button_bomb.png";
+AButton.canvas = document.getElementById("js_button_canvas");
+AButton.context = AButton.canvas.getContext("2d");
+AButton.context.textAlign = "center";
+
+AButton.count = 0;
+AButton.click_count = 1;
+AButton.play_time = 0;
+
+var GameState = {	START		: 0,
+					OFF			: 1,
+					ON			: 2,
+					RELEASE		: 3,
+					BOMB		: 4,
+					GAMEOVER	: 5,
+					CLEAR		: 6};
+
+var gameState = GameState.START;
+
+
+
+function updateState(state){
+
+	if(state!=undefined){
+		gameState = state;
+		AButton.count = 0;
+	}
+	switch(gameState){
+		case GameState.START :
+			setCanvas();
+			break;
+		case GameState.OFF :
+			AButton.click_count = 1;
+			AButton.play_time = 0;
+			drawImg(AButton.img_off);
+			break;
+		case GameState.ON :
+			drawImg(AButton.img_on);
+			break;
+		case GameState.RELEASE :
+			drawImg(AButton.img_off);
+			break;
+		case GameState.BOMB :
+			drawImg(AButton.img_bomb);
+			break;
+		case GameState.GAMEOVER :
+			setCanvas();
+			break;
+		case GameState.CLEAR :
+			setCanvas();
+			break;
+	}
+}
+
+function drawImg(img){
+	AButton.context.drawImage(img,0,0,320,320);
+}
+
+function setCanvas(){
+	AButton.context.fillStyle = "black";
+	AButton.context.fillRect(0,0,320,320);
+	AButton.context.fillStyle = "white";
+	switch(gameState){
+		case GameState.START :
+			AButton.context.font = "60px sans-serif";
+			AButton.context.fillText("A Button",160,120);
+			AButton.context.font = "24px sans-serif";
+			AButton.context.fillText("クリックしてスタート！",160,240);
+			break;
+		case GameState.GAMEOVER :
+			AButton.context.font = "52px sans-serif";
+			AButton.context.fillText("GAME OVER",160,120); 
+			AButton.context.font = "20px sans-serif";
+			AButton.context.fillText("プレイ時間："+AButton.play_time+"秒くらい",160,180);
+			AButton.context.fillText("クリック数："+AButton.click_count+"回",160,210);
+			AButton.context.font = "24px sans-serif";
+			AButton.context.fillText("クリックしてやりなおす",160,250);
+			AButton.context.font = "20px sans-serif";
+			AButton.context.fillText("↓↓↓下からツイートしてね↓↓↓",160,300);
+			break;
+		case GameState.CLEAR :
+			AButton.context.font = "52px sans-serif";
+			AButton.context.fillText("クリア！",160,120); 
+			AButton.context.font = "20px sans-serif";
+			AButton.context.fillText("プレイ時間："+AButton.play_time+"秒くらい",160,180);
+			AButton.context.fillText("クリック数："+AButton.click_count+"回",160,210);
+			AButton.context.font = "24px sans-serif";
+			AButton.context.fillText("クリックしてもう一度プレイ！",160,250);
+			AButton.context.font = "20px sans-serif";
+			AButton.context.fillText("↓↓↓下からツイートしてね↓↓↓",160,300);
+			break;
+
+	}
+}
+
+function setTweetText(){
+	var str ="https://twitter.com/share?";
+	str += "url=https://potofu.github.io/r/%23link20160124"
+	str += "&text=";
+	switch(gameState){
+		case GameState.START :
+			break;
+		case GameState.OFF :
+		case GameState.ON :
+		case GameState.RELEASE :
+			str += "ゲームをプレイ中！／";
+			break;
+		case GameState.BOMB :
+			str += "！？／";
+			break;
+		case GameState.GAMEOVER :
+			str += "GAME OVER／プレイ時間：" + AButton.play_time + "秒くらい／クリック数："+AButton.click_count+"回／";
+			break;
+		case GameState.CLEAR :
+			str += "クリア！／プレイ時間：" + AButton.play_time + "秒くらい／クリック数："+AButton.click_count+"回／";
+			break;
+	}
+	str +="A Button｜冷凍ポトフ"
+
+	document.getElementById("js_button_tweet").href = str;
+
+}
+
+AButton.canvas.onmousedown = function(){
+	switch(gameState){
+		case GameState.START :
+			setInterval(AButton.clock,1000);
+			updateState(GameState.OFF);
+			break;
+		case GameState.OFF :
+			updateState(GameState.ON);
+			break;
+		case GameState.ON :
+			break;
+		case GameState.RELEASE :
+			AButton.click_count++;
+			updateState(GameState.ON);
+			break;
+		case GameState.BOMB :
+			updateState(GameState.GAMEOVER);
+			break;
+		case GameState.GAMEOVER :
+			updateState(GameState.OFF);
+			break;
+		case GameState.CLEAR :
+			updateState(GameState.OFF);
+			break;
+	}
+};
+
+AButton.canvas.onmouseup = function(){
+	switch(gameState){
+		case GameState.START :
+			break;
+		case GameState.OFF :
+			break;
+		case GameState.ON :
+			updateState(GameState.RELEASE);
+			break;
+		case GameState.RELEASE :
+			break;
+		case GameState.BOMB :
+			break;
+		case GameState.GAMEOVER :
+			break;
+		case GameState.CLEAR :
+			break;
+	}
+};
+
+AButton.clock = function(){
+	AButton.count ++;
+	AButton.play_time ++;
+
+	switch(gameState){
+		case GameState.START :
+			break;
+		case GameState.OFF :
+			break;
+		case GameState.ON :
+			if(AButton.count>10){
+				updateState(GameState.CLEAR);
+			}
+			break;
+			break;
+		case GameState.RELEASE :
+			if(AButton.count>1){
+				updateState(GameState.BOMB);
+			}
+			break;
+		case GameState.BOMB :
+		case GameState.GAMEOVER :
+		case GameState.CLEAR :
+			AButton.play_time --;
+			break;
+	}
+};
+
+
+
+
+
+updateState();
+
+//button end
+
+(function(){
+//mizutame.js
+var x = 123456789;
+var y = 362436069;
+var z = 521288629;
+var w = 88675123;
+var ctx;
+var width;
+var height;
+var radius;
+var number;
+
+function setRandSeed(s){
+	x = 1812433253*(s^(s>>>30))+1;
+	y = 1812433253*(x^(x>>>30))+2;
+	z = 1812433253*(y^(y>>>30))+3;
+	w = 1812433253*(z^(z>>>30))+4;
+	for(var i=0; i<32; i++){
+		xor();
+	}
+}
+
+function setRad(){
+	radius = height/8.4;
+	if(height>width){
+		radius = width/8.4;
+	}
+	number = Math.floor(height*width/(radius*radius));
+}
+
+function xor(){
+	var t = x^(x<<11);
+	x = y;
+	y = z;
+	z = w;
+	w = (w^(w>>>19))^(t^(t>>>8));
+	return(w);
+}
+
+
+function randFloat(){
+	var a = xor();
+	if(a < 0){
+		a += 4294967296.0;
+	}
+	return(a/ 4294967296.0);
+}
+
+function randN(n){
+	return(Math.floor(n*randFloat()));
+}
+
+
+function tama(){
+	var red = randN(128);
+	var green = randN(32)+127;
+	var blue = randN(75)+180;
+	var alpha = randFloat()*0.7;
+	ctx.fillStyle = "rgba("+red+","+green+","+blue+","+alpha+")";
+	ctx.beginPath();
+	ctx.arc((width+radius)*randFloat()-0.5*radius, (height+radius)*randFloat()-0.5*radius, Math.abs(randFloat()-randFloat()*0.8)*radius+0.1*radius, 0, Math.PI*2, true);
+	ctx.fill();
+}
+
+function mizutama(wc,hc){
+	width = wc;
+	height = hc;
+	setRad();
+	setRandSeed(new Date().getTime());
+	ctx = document.getElementById("js_mizutama_canvas").getContext("2d");
+	ctx.fillStyle = "rgba(255,255,255,1.0)";
+	ctx.fillRect(0,0,width,height);
+	for(var i=0;i<number;i++){
+		tama();
+	}
+}
+//mizutama end
+window.mizutama = mizutama;
+mizutama(320,568);
+})();
+
+//cookie.js
+function readCookie(name){
+	var ck = document.cookie+";";
+	var start = ck.indexOf(name+"=");
+	if(start==-1){
+		writeCookie(name,0);
+		return 0;
+	} else {
+		start += name.length+1;
+		var end = ck.indexOf(";",start);
+		return ck.substring(start,end);
+	}
+}
+function readCookieArray(name){
+	var str = readCookie(name);
+	var ck = new Array();
+	do{
+		ck.push(str.substring(0,str.indexOf(",")));
+		str = str.substring(str.indexOf(",")+1,str.length);
+	}while(str.indexOf(",")!=-1)
+	return ck;
+}
+function writeCookieArray(name,value){
+	var str = "";
+	for(var i=0; i<value.length; i++){
+		str += value[i]+",";
+	}
+	writeCookie(name,str);
+}
+function writeCookie(name,value){
+	writeCookieExp(name,value,367);
+}
+function writeCookieExp(name,value,days){
+	var expire = new Date();
+	expire.setTime(expire.getTime()+days*86400*1000);
+	document.cookie = name + "=" + value + ";expires=" + expire.toUTCString();
+}
+
+
+var pp;
+(function(){
+//pomeke.js
+
+
+/* Hiroe Pome no Ke v0.1 */
+
+
+var x = 123456789;
+var y = 362436069;
+var z = 521288629;
+var w = 88675123;
+
+var pomeke_img = new Image();
+pomeke_img.src = "resource/js_pomeke_img.png";
+var canvas_1,canvas_2;
+var ctx_1,ctx_2;
+var pomeke_distr = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+					[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+
+var pc_r = {x : 160, y : 160, move : 0};
+var pome_r = {x : 120, y : 120, move : 0, v : 1};
+var pome_p = {r : 0 , g : 0, b : 0,rank : 0,v : 0,d : 1,s : 0};
+/*var*/ pp = 0;
+var pn = 0;
+
+var log_str = new Array(1);
+log_str[0] ="「ひろえポメの毛」スタート！";
+var log_num = 1;
+
+
+
+var rank_comment = ["ポメラニアンが<br>自分で歩くように<br>なります。",
+					"ポメラニアンの毛が<br>一度に多く<br>生え変わります。",
+					"ポメラニアンの毛から<br>もらえるppが<br>ちょっと増えます。",
+					"ポメラニアンの<br>歩く速度が<br>少し速くなります。",
+					"ポメラニアンの毛から<br>もらえるppが<br>もうちょっと増えます。",
+					"ポメラニアンの毛から<br>もらえるppが<br>どかんと増えます。",
+					"ポメラニアンが<br>走り回るように<br>なります。",
+					"そろそろポメラニアンの<br>毛の生え替わり<br>シーズンです。",
+					"ポメラニアンの毛から<br>もらえるppが<br>尋常じゃなく増えます。",
+					"ポメラニアンが<br>かなりすばしっこく<br>なります。",
+					"ポメラニアンの<br>毛並みが<br>よくなります（多分）。",
+					"このポメラニアンは<br>とても立派な<br>ポメラニアンです！"];
+
+var rankup_comment = [	"ポメラニアンが自分で歩くようになった！",
+						"ポメラニアンの毛が一度に多く生え変わるようになった！",
+						"ポメラニアンの毛からもらえるppがちょっと増えた！",
+						"ポメラニアンの歩く速度が少し速くなった！",
+						"ポメラニアンの毛からもらえるppがもうちょっと増えた！",
+						"ポメラニアンの毛からもらえるppがどかんと増えた！",
+						"ポメラニアンが走り回るようになった！",
+						"ポメラニアンの毛の生え替わりシーズンが到来！",
+						"ポメラニアンの毛からもらえるppが尋常じゃなく増えた！",
+						"ポメラニアンがかなりすばしっこくなった！",
+						"クリアです！おめでとう！立派なポメラニアンになりました！"];
+
+window.addEventListener('load',function(){
+	canvas_1 = document.getElementById("js_pomeke_canvas_1");
+	ctx_1 = canvas_1.getContext("2d");
+
+
+	canvas_1.onmousedown = function(e){
+		runTimerTask();
+		canvas_1.onmousedown = click;
+	};
+
+	drawMapBG();
+	//drawTest();
+
+	canvas_2 = document.getElementById("js_pomeke_canvas_2");
+	ctx_2 = canvas_2.getContext("2d");
+	ctx_2.fillStyle = "white";
+	ctx_2.fillRect(0,0,320,320);
+
+	document.onkeydown = keyListener;
+	//runTimerTask();
+	movePC();
+	movePome();
+});
+
+function drawTest(){
+	ctx_1.drawImage(pomeke_img,0,0,20,20,12*20,8*20,20,20);
+	ctx_1.drawImage(pomeke_img,0,20,20,20,7*20,11*20,20,20);
+
+	ctx_1.drawImage(pomeke_img,20,20,20,20,7*20,10*20,20,20)
+	ctx_1.drawImage(pomeke_img,20,20,20,20,7*20,9*20,20,20)
+	ctx_1.drawImage(pomeke_img,20,20,20,20,8*20,9*20,20,20)
+	ctx_1.drawImage(pomeke_img,20,20,20,20,8*20,8*20,20,20)
+	ctx_1.drawImage(pomeke_img,20,20,20,20,8*20,7*20,20,20)
+	ctx_1.drawImage(pomeke_img,20,20,20,20,9*20,7*20,20,20)
+	ctx_1.drawImage(pomeke_img,20,20,20,20,10*20,7*20,20,20)
+	ctx_1.drawImage(pomeke_img,20,20,20,20,11*20,7*20,20,20)
+	ctx_1.drawImage(pomeke_img,20,20,20,20,12*20,7*20,20,20)
+
+}
+
+function drawPomeke(red,green,blue){
+	var angle = randFloat()*2*Math.PI;
+	var radius = 1-Math.abs(randFloat()-randFloat());
+	var img_x = 160*radius*Math.cos(angle)+160;
+	var img_y = 120*radius*Math.sin(angle)+160;
+	var rad = 2*Math.PI*randFloat();
+	var length = 24*randFloat()+8;
+	var color = "rgba("+red+","+green+","+blue+",0.5)";
+	ctx_2.strokeStyle = color;
+	ctx_2.beginPath();
+	ctx_2.moveTo(img_x,img_y);
+	ctx_2.lineTo(img_x+length*Math.cos(rad),img_y+length*Math.sin(rad));
+	ctx_2.stroke();
+}
+
+function xor(){
+	var t = x^(x<<11);
+	x = y;
+	y = z;
+	z = w;
+	w = (w^(w>>>19))^(t^(t>>>8));
+	return(w);
+}
+
+
+function randFloat(){
+	var a = xor();
+	if(a < 0){
+		a += 4294967296.0;
+	}
+	return(a/ 4294967296.0);
+}
+function randN(n){
+	return(Math.floor(n*randFloat()));
+}
+
+
+
+function drawMapBG(){
+	for(var i=0; i<16; i++){
+		for(var j=0; j<16; j++){
+			ctx_1.drawImage(pomeke_img,20,0,20,20,i*20,j*20,20,20);
+			if(pomeke_distr[i][j]==1){
+				ctx_1.drawImage(pomeke_img,20,20,20,20,i*20,j*20,20,20);
+			}
+		}
+	}
+}
+function drawMap(){
+	drawMapBG();
+	drawPome();
+	drawPC();
+}
+
+function drawMapPomeke(x_k,y_k){
+	if(x_k>=0&&x_k<=15&&y_k>=0&&y_k<=15){
+		if(pomeke_distr[x_k][y_k]==1){
+			ctx_1.drawImage(pomeke_img,20,20,20,20,x_k*20,y_k*20,20,20);
+		}
+	}
+}
+function movePome(){
+	if(pome_r.move==0){
+		pome_r.move=randN(104-pome_p.r)+1;
+	}
+	var v_x = 0;
+	var v_y = 0;
+	switch(pome_r.move){
+		case 1 : v_y = -pome_r.v;
+			break;
+		case 2 : v_x = -pome_r.v;
+			break;
+		case 3 : v_y = pome_r.v;
+			break;
+		case 4 : v_x = pome_r.v;
+			break;
+		default : pome_r.move = 0;
+			break;
+	}
+
+
+	if(pome_r.x+v_x<0||pome_r.x+v_x>300){
+		pome_r.move = 0;
+	} else {
+		pome_r.x += v_x;
+	}
+
+	if(pome_r.y+v_y<0||pome_r.y+v_y>300){
+		pome_r.move = 0;
+	} else {
+		pome_r.y += v_y;
+	}
+
+	drawPome(v_x,v_y);
+
+	if(pome_r.x%20==0&&pome_r.y%20==0){
+		pome_r.move = 0;
+		if(v_x!=0||v_y!=0){
+			dropPomeke();
+			eatFood();
+		}
+		pome_r.v = pome_p.v;
+		if(pome_r.x==pc_r.x&&pome_r.y==pc_r.y){
+			pome_r.move = randN(4)+1;
+			if(pome_p.v==0){
+				pome_r.v = 0.5;
+			}
+		}
+	}
+
+	
+}
+function dropPomeke(){
+	if(randFloat()*(2-pome_p.b/100)<=1){
+		pomeke_distr[pome_r.x/20][pome_r.y/20]=1;
+	}
+}
+
+function drawPome(v_x,v_y){
+	if(pome_r.x%20==0&&pome_r.y%20==0){
+		var x_t = Math.floor((pome_r.x)/20);
+		var y_t = Math.floor((pome_r.y)/20);
+		ctx_1.drawImage(pomeke_img,20,0,20,20,x_t*20,y_t*20,20,20);
+		drawMapPomeke(x_t,y_t);
+		ctx_1.drawImage(pomeke_img,20,0,20,20,(x_t-1)*20,y_t*20,20,20);
+		drawMapPomeke(x_t-1,y_t);
+		ctx_1.drawImage(pomeke_img,20,0,20,20,x_t*20,(y_t-1)*20,20,20);
+		drawMapPomeke(x_t,y_t-1);
+		ctx_1.drawImage(pomeke_img,20,0,20,20,(x_t+1)*20,y_t*20,20,20);
+		drawMapPomeke(x_t+1,y_t);
+		ctx_1.drawImage(pomeke_img,20,0,20,20,x_t*20,(y_t+1)*20,20,20);
+		drawMapPomeke(x_t,y_t+1);
+
+	} else {
+		var x_t = Math.floor(pome_r.x/20);
+		var y_t = Math.floor(pome_r.y/20);
+		ctx_1.drawImage(pomeke_img,20,0,20,20,x_t*20,y_t*20,20,20);
+		drawMapPomeke(x_t,y_t);
+
+		x_t = Math.floor((pome_r.x+19)/20);
+		y_t = Math.floor((pome_r.y+19)/20);
+		ctx_1.drawImage(pomeke_img,20,0,20,20,x_t*20,y_t*20,20,20);
+		drawMapPomeke(x_t,y_t);
+	}
+
+	ctx_1.drawImage(pomeke_img,0,20,20,20,pome_r.x,pome_r.y,20,20);
+	ctx_1.drawImage(pomeke_img,0,0,20,20,pc_r.x,pc_r.y,20,20);
+}
+
+function movePC(){
+	var v_x = 0;
+	var v_y = 0;
+	switch(pc_r.move){
+		case 1 : v_y = -2;
+			break;
+		case 2 : v_x = -2;
+			break;
+		case 3 : v_y = 2;
+			break;
+		case 4 : v_x = 2;
+			break;
+	}
+
+
+	if(pc_r.x+v_x<0||pc_r.x+v_x>300){
+		pc_r.move = 0;
+	} else {
+		pc_r.x += v_x;
+	}
+
+	if(pc_r.y+v_y<0||pc_r.y+v_y>300){
+		pc_r.move = 0;
+	} else {
+		pc_r.y += v_y;
+	}
+
+	drawPC(v_x,v_y);
+	if(pc_r.x%20==0&&pc_r.y%20==0){
+		pc_r.move = 0;
+		if(v_x!=0||v_y!=0){
+			getPomeke();
+		}
+	}
+}
+function getPomeke(){
+	if(pomeke_distr[pc_r.x/20][pc_r.y/20]==1){
+		var gpn = randN(pome_p.d)+1;
+		var gpp = 0;
+		for(var i=0; i<gpn; i++){
+			gpp += getOnePomeke();
+		}
+		log(gpn+"本のポメ毛と"+gpp.toLocaleString()+"ppゲット！");
+		pomeke_distr[pc_r.x/20][pc_r.y/20]=0;
+	}
+}
+function getOnePomeke(){
+	drawPomeke(randN(55+2*pome_p.r),randN(55+2*pome_p.g),randN(55+2*pome_p.b));
+	pn += 1;
+	
+	var l_f = 1;
+	if(pome_p.rank>=randN(20)){
+		l_f /= randN(pome_p.rank)+1;
+	}
+	return getPP(randN(getPPMax()*l_f)+1);
+}
+function drawPC(v_x,v_y){
+	if(pc_r.x%20==0&&pc_r.y%20==0){
+		var x_t = Math.floor((pc_r.x)/20);
+		var y_t = Math.floor((pc_r.y)/20);
+		ctx_1.drawImage(pomeke_img,20,0,20,20,x_t*20,y_t*20,20,20);
+		drawMapPomeke(x_t,y_t);
+		ctx_1.drawImage(pomeke_img,20,0,20,20,(x_t-1)*20,y_t*20,20,20);
+		drawMapPomeke(x_t-1,y_t);
+		ctx_1.drawImage(pomeke_img,20,0,20,20,x_t*20,(y_t-1)*20,20,20);
+		drawMapPomeke(x_t,y_t-1);
+		ctx_1.drawImage(pomeke_img,20,0,20,20,(x_t+1)*20,y_t*20,20,20);
+		drawMapPomeke(x_t+1,y_t);
+		ctx_1.drawImage(pomeke_img,20,0,20,20,x_t*20,(y_t+1)*20,20,20);
+		drawMapPomeke(x_t,y_t+1);
+
+	} else {
+		var x_t = Math.floor(pc_r.x/20);
+		var y_t = Math.floor(pc_r.y/20);
+		ctx_1.drawImage(pomeke_img,20,0,20,20,x_t*20,y_t*20,20,20);
+		drawMapPomeke(x_t,y_t);
+
+		x_t = Math.floor((pc_r.x+19)/20);
+		y_t = Math.floor((pc_r.y+19)/20);
+		ctx_1.drawImage(pomeke_img,20,0,20,20,x_t*20,y_t*20,20,20);
+		drawMapPomeke(x_t,y_t);
+	}
+
+	ctx_1.drawImage(pomeke_img,0,0,20,20,pc_r.x,pc_r.y,20,20);
+}
+
+function runTimerTask(){
+	movePC();
+	movePome();
+
+	setTimeout(runTimerTask,1000/60);
+
+}
+
+function keyListener(){
+	if(event.keyCode == 87||event.keyCode == 38){	//w↑
+		if(pc_r.move==0){
+			pc_r.move = 1;
+		}
+	}
+	if(event.keyCode == 65||event.keyCode == 37){	//a←
+		if(pc_r.move==0){
+			pc_r.move = 2;
+		}
+	}
+	if(event.keyCode == 83||event.keyCode == 40){	//s↓
+		if(pc_r.move==0){
+			pc_r.move = 3;
+		}
+	}
+	if(event.keyCode == 68||event.keyCode == 39){	//d→
+		if(pc_r.move==0){
+			pc_r.move = 4;
+		}
+	}
+
+	if(event.keyCode == 82){	//r
+		buyFood("r");
+	}
+	if(event.keyCode == 71){	//g
+		buyFood("g");
+	}
+	if(event.keyCode == 66){	//b
+		buyFood("b");
+	}
+}
+
+function click(e){
+	if(pc_r.move==0){
+		var rect = e.target.getBoundingClientRect();
+		var mouse = {x : 0, y : 0};
+		mouse.x = Math.floor((e.clientX - rect.left) / 20) - (pc_r.x)/20;
+		mouse.y = Math.floor((e.clientY - rect.top) / 20) - (pc_r.y)/20;
+
+		if((mouse.x-mouse.y)>0&&(mouse.x+mouse.y)<0){
+			pc_r.move = 1;
+		}
+		if((mouse.x-mouse.y)<0&&(mouse.x+mouse.y)<0){
+			pc_r.move = 2;
+		}
+		if((mouse.x-mouse.y)<0&&(mouse.x+mouse.y)>0){
+			pc_r.move = 3;
+		}
+		if((mouse.x-mouse.y)>0&&(mouse.x+mouse.y)>0){
+			pc_r.move = 4;
+		}
+
+	}
+
+}
+function eatFood(){
+	if(randN(10+pome_p.g)==1){
+		switch(randN(3)){
+			case 0 : pome_p.r -= 1;
+				break;
+			case 1 : pome_p.g -= 1;
+				break;
+			case 2 : pome_p.b -= 1;
+				break;
+		}
+		setFoodAll();
+	}
+}
+
+function setFoodAll(){
+	if(pome_p.r<0)	pome_p.r=0;
+	if(pome_p.g<0)	pome_p.g=0;
+	if(pome_p.b<0)	pome_p.b=0;
+	setFood("r");
+	setFood("g");
+	setFood("b");
+
+}
+function setFood(str){
+	if(pome_p[str]==100){
+		document.getElementById("js_pomeke_food-price_"+str).textContent = "∞";
+	} else {
+		document.getElementById("js_pomeke_food-price_"+str).textContent = getFoodPrice(pome_p[str]).toLocaleString();
+	}
+	document.getElementById("js_pomeke_food-num_"+str).textContent = pome_p[str];
+}
+
+
+function getFoodPrice(num){
+	return Math.floor(8 * Math.pow(1.177522190213413,num+1))+1;
+}
+
+function buyFood(str){
+	var num = pome_p[str];
+	if(num<100){
+		if(pp>=getFoodPrice(num)){
+			pome_p[str] += 1;
+			getPP(-getFoodPrice(num));
+			var f_char;
+			switch(str){
+				case "r" : f_char = "赤";
+					break;
+				case "g" : f_char = "緑";
+					break;
+				case "b" : f_char = "青";
+					break;
+			}
+			log(getFoodPrice(num).toLocaleString()+"ppで"+f_char+"のポメフードを購入！")
+			setFood(str);
+		}
+	}
+}
+function getRankPrice(){
+	var rank_price = 1;
+	for(var i=0; i<pome_p.rank; i++){
+		rank_price *= 10;
+		rank_price += 1;
+	}
+	rank_price *= pome_p.rank + 1;
+
+	if(pome_p.rank==9){
+		rank_price = 10000000000;
+	}
+	if(pome_p.rank==10){
+		rank_price = 123456789101;
+	}
+	if(pome_p.rank==11){
+		rank_price = 1000000000001;
+	}
+
+
+	return rank_price;
+}
+function upRank(){
+	if(pp>=getRankPrice()){
+		getPP(-getRankPrice());
+		log(getRankPrice()+"ppでポメランクUP！");
+		log(rankup_comment[pome_p.rank]);
+		pome_p.rank += 1;
+		setRank();
+	}
+}
+
+function setRank(){
+	if(pome_p.rank>=1){
+		pome_p.v = 1;
+	}
+	if(pome_p.rank>=2){
+		pome_p.d = pome_p.rank;
+	}
+	if(pome_p.rank>=3){
+		pome_p.s = 2;
+	}
+	if(pome_p.rank>=4){
+		pome_p.v = 2;
+	}
+	if(pome_p.rank>=5){
+		pome_p.s = 3;
+	}
+
+
+	if(pome_p.rank>=7){
+		pome_p.v = 4;
+	}
+	if(pome_p.rank>=8){
+		pome_p.d *= pome_p.d;
+	}
+
+
+	if(pome_p.rank>=10){
+		pome_p.v = 5;
+	}
+
+	if(pome_p.rank>=11){
+		document.getElementById("js_pomeke_rank").textContent = "MAX";
+		document.getElementById("js_pomeke_rank-p").textContent = "∞";
+	} else {
+		document.getElementById("js_pomeke_rank").textContent = pome_p.rank;
+		document.getElementById("js_pomeke_rank-p").textContent = getRankPrice().toLocaleString();
+	}
+		document.getElementById("js_pomeke_rank-c").innerHTML = rank_comment[pome_p.rank];
+}
+
+function getPP(num){
+	pp += num;
+	if(pp<0){
+		pp = 0;
+	}
+	if(pp>1000000000000){
+		pp = 1000000000000;
+	}
+	document.getElementById("js_pomeke_pp").textContent = pp.toLocaleString();
+
+	return num;
+}
+function getPPMax(){
+	var max = pome_p.r*pome_p.r+pome_p.g*pome_p.g+pome_p.b*pome_p.b;
+	max += (pome_p.r*pome_p.g+pome_p.g*pome_p.b+pome_p.b*pome_p.r)*pome_p.s;
+	max = Math.floor(max/10)+pome_p.r+pome_p.g+pome_p.b+1;
+	if(pome_p.rank>=6){
+		max += pome_p.r*pome_p.g*pome_p.b;
+	}
+	if(pome_p.rank>=9){
+		max *= 10;
+	}
+	return max;
+}
+
+function ruinTheFun(){
+	getPP(1000000000000);
+	pome_p.rank = 11;
+	setRank();
+}
+
+
+/*
+	// 開発中のセーブ・ロード機能
+function encodeMap(){
+	var rows_v = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	for(var i=0; i<16; i++){
+		rows_v[i] += pomeke_distr[i][0]
+		for(var j=1; j<16; j++){
+			rows_v[i] *= 2;
+			rows_v[i] += pomeke_distr[i][j];
+		}
+	}
+
+	var rows_str = new Array(16);
+	for(var i=0; i<16; i++){
+		rows_str[i] = rows_v[i].toString(16);
+	}
+	return rows_str;
+}
+
+function decodeMap(rows_str){
+	var rows_v = new Array(16);
+	for(var i=0; i<16; i++){
+		rows_v[i] = ("0000000000000000"+parseInt("0x"+rows_str[i]).toString(2)).slice(-16);
+	}
+
+	for(var i=0; i<16; i++){
+		for(var j=0; j<16; j++){
+			pomeke_distr[i][j] = parseInt(rows_v[i].charAt(j));
+		}
+	}
+}
+
+function save(){
+	var save_v = new Array();
+	var pd_str = encodeMap();
+	for(var i=0; i<16; i++){
+		save_v[i] = pd_str[i];
+	}
+
+	save_v[16] = Math.floor((pc_r.x+10)/20)*20;
+	save_v[17] = Math.floor((pc_r.y+10)/20)*20;
+	save_v[18] = Math.floor((pome_r.x+10)/20)*20;
+	save_v[19] = Math.floor((pome_r.y+10)/20)*20;
+	save_v[20] = pome_p.r;
+	save_v[21] = pome_p.g;
+	save_v[22] = pome_p.b;
+	save_v[23] = pome_p.rank;
+	save_v[24] = pp;
+	save_v[25] = pn;
+	return save_v;
+}
+*/
+
+function log(str){
+	log_str.push(str);
+
+	if(log_num>=30){
+		log_str.shift();
+	}
+
+	log_num++;
+
+	document.getElementById("js_pomeke_log").innerHTML = "";
+
+	var lsl = log_str.length;
+	for(var i=0; i<lsl ; i++){
+		document.getElementById("js_pomeke_log").innerHTML += log_str[i];
+		if(i!=lsl-1){
+			document.getElementById("js_pomeke_log").innerHTML += "<br>";
+		}
+	}
+	document.getElementById("js_pomeke_log").scrollTop = document.getElementById("js_pomeke_log").scrollHeight;
+}
+
+//pomeke end
+window.upRank = upRank;
+window.buyFood = buyFood;
+window.pome_p = pome_p;
+window.Pomeke = {ruinTheFun:ruinTheFun};
+})();
+
+function tweetPomeke(){
+	var pome_clear = "";
+	if(pome_p.rank==11){
+		pome_clear = " ★";
+	}
+	var str = "https://twitter.com/share?";
+	str += "url=https://potofu.github.io/r/%23linkpomeke"
+	str += "&text="+pp.toLocaleString()+"pp　ひろえポメの毛" + pome_clear + "｜冷凍ポトフ";
+	document.getElementById("js_pomeke_tweet").href = str;
+}
+
+var wakame;
+(function(){
+//wakametest.js
+
+
+var x = 123456789;
+var y = 362436069;
+var z = 521288629;
+var w = 88675123;
+
+var wakame_img = new Image();
+wakame_img.src = "resource/js_wakametest_img.png";
+var max_img = new Image();
+max_img.src = "resource/js_wakametest_max.png";
+var canvas;
+var ctx;
+/*var*/ wakame = 0;
+var item = [0,0,0,0,0,0,0];
+var item_name = ["わかめブースター","わかめ","100倍わかめ","10000倍わかめ","100万倍わかめ","1億倍わかめ","クリアわかめ"];
+var booster_price = 1000;
+
+var log_str = new Array(100);
+log_str[0] = "わかめクリッカースタート！";
+var log_num = 1;
+
+function setRandSeed(s){
+	x = 1812433253*(s^(s>>>30))+1;
+	y = 1812433253*(x^(x>>>30))+2;
+	z = 1812433253*(y^(y>>>30))+3;
+	w = 1812433253*(z^(z>>>30))+4;
+	for(var i=0; i<32; i++){
+		xor();
+	}
+}
+
+function xor(){
+	var t = x^(x<<11);
+	x = y;
+	y = z;
+	z = w;
+	w = (w^(w>>>19))^(t^(t>>>8));
+	return(w);
+}
+
+
+function randFloat(){
+	var a = xor();
+	if(a < 0){
+		a += 4294967296.0;
+	}
+	return(a/ 4294967296.0);
+}
+
+function randN(n){
+	return(Math.floor(n*randFloat()));
+}
+
+
+window.addEventListener('load',function(){
+	canvas = document.getElementById("js_wakametest_canvas");
+	ctx = canvas.getContext("2d");
+
+
+	canvas.onmouseup = function(){
+		click();
+	};
+
+});
+
+function drawWakame(){
+	var img_x = randFloat()*320;
+	var img_y = randFloat()*320;
+	var rot_rad = 2*Math.PI*randFloat();
+	ctx.save();
+	ctx.translate(img_x,img_y);
+	ctx.rotate(rot_rad);
+	ctx.translate(-16,-16);
+	ctx.drawImage(wakame_img,0,0);
+	ctx.restore();
+}
+
+function click(){
+	var get = getMax();
+	get = randN(get);
+	get +=1;
+	getWakame(get);
+	log(get.toLocaleString()+"わかめゲット！");
+}
+
+function getWakame(w){
+	wakame += w;
+	if(wakame>1000000000000){
+		wakame=1000000000000;
+	}
+	if(w > 100){
+		w = 100;
+	}
+	for(var i=0;i<w;i++){
+		drawWakame();
+	}
+	setWakameNum();
+}
+function loseWakame(w){
+	wakame -=w;
+	ctx.fillStyle = "white";
+	ctx.fillRect(0,0,320,320);
+
+	if(wakame < 0){
+		wakame = 0;
+	} else {
+		if(wakame >1000){
+			drawMaxWakame();
+		} else {
+			for(var i=0;i<wakame;i++){
+				drawWakame();
+			}
+		}
+	setWakameNum();
+
+	}
+	
+
+}
+function drawMaxWakame(){
+	var img_x = 160;
+	var img_y = 160;
+	var rot_rad = Math.PI/2*(log_num%4);
+	ctx.save();
+	ctx.translate(img_x,img_y);
+	ctx.rotate(rot_rad);
+	ctx.translate(-160,-160);
+	ctx.drawImage(max_img,0,0);
+	ctx.restore();
+	for(var i=0;i<100;i++){
+		drawWakame();
+	}
+}
+function setWakameNum(){
+	document.getElementById("js_wakametest_wakame_num").textContent = wakame.toLocaleString();
+}
+
+function buyItem(num){
+	var n = parseInt(num);
+	if(item[n]>=100){
+		return false;
+	}
+
+	if(n==0){
+		return buyBooster();
+	}
+	var item_price = 1;
+	for(var i=0; i<n; i++){
+		item_price *= 100;
+	}
+	item_price /= 100;
+
+	if(item_price > wakame){
+		return false;
+	} else {
+		loseWakame(item_price);
+		item[n] += 1;
+		log(item_name[n]+"を購入！");
+		document.getElementById("js_wakametest_item"+num).textContent = item[n];
+		if(n==6){
+			log("クリアです！　おめでとう！");
+			document.getElementById("js_wakametest_mess").textContent = "おめでとう！";
+			if(item[6]==100){
+				log("ここまで遊んでくれてありがとうございました！");
+				log("『ふえろわかめ』で使えるパスワードは"+getPassword("Wakame")+"です。");
+			}
+		}
+	}
+
+}
+
+function buyBooster(){
+	if(booster_price > wakame){
+		return false;
+	} else {
+		loseWakame(booster_price);
+		item[0] +=1;
+		log(item_name[0]+"を購入！");
+		booster_price += 2000*item[0]-1000;
+		document.getElementById("js_wakametest_item0").textContent = item[0];
+		document.getElementById("js_wakametest_booster").textContent = booster_price.toLocaleString();
+
+	}
+}
+function getPassword(str){
+	var n = (str.length+item[6])*str.length+item[6];
+	n *= str.length+item[6];
+	setRandSeed(n);
+	for(var i=2;i<item[6];i+=0.298){
+		xor();
+	}
+	n = Math.floor(xor()/12345.678);
+	return (n);
+
+}
+function log(str){
+	if(log_num < 100){
+		log_str[log_num] = str;
+		log_num++;
+
+		document.getElementById("js_wakametest_log").innerHTML = "";
+		for(var i=0; i<log_num; i++){
+			document.getElementById("js_wakametest_log").innerHTML += log_str[i];
+			if(i!=log_num-1){
+				document.getElementById("js_wakametest_log").innerHTML += "<br>";
+			}
+		}
+	} else {
+		for(var i=0; i<99;i++){
+			log_str[i] = log_str[i+1];
+
+		}
+		log_str[99] = str;
+		log_num++;
+
+		document.getElementById("js_wakametest_log").innerHTML = "";
+		for(var i=0; i<100; i++){
+			document.getElementById("js_wakametest_log").innerHTML += log_str[i];
+			if(i!=99){
+				document.getElementById("js_wakametest_log").innerHTML += "<br>";
+			}
+		}
+		if(log_num > 1000000000){
+			log_num = 401;
+		}
+
+	}
+
+	if(document.getElementById("js_wakametest_asave").checked){
+		save();
+	}
+
+	document.getElementById("js_wakametest_log").scrollTop = document.getElementById("js_wakametest_log").scrollHeight;
+
+}
+function getMax(){
+	var max = ((1+item[1]/10+item[5]/2)*(1+item[3])+item[2])*(1+item[4]/2);
+	max *= item[0]+1;
+	max += wakame*0.0005*item[6];
+	return max;
+}
+function ruinTheFun(){
+	wakame = 1000000000000;
+	for(i=0;i<7;i++){
+		item[i] = 100;
+	}
+
+	booster_price = 10001000;
+
+	rewrite();
+	log("汝、幸失わん。")
+
+	document.getElementById("js_wakametest_mess").textContent = "めでたくない！";
+
+}
+function reset(){
+	wakame = 0;
+	for(i=0;i<7;i++){
+		item[i] = 0;
+	}
+	booster_price = 1000;
+	document.getElementById("js_wakametest_mess").textContent = "わかめのふえ方はチート級かも？";
+
+	rewrite();
+	relog("リセットしました。");
+}
+function rewrite(){
+	loseWakame(0);
+	for(i=0;i<7;i++){
+		document.getElementById("js_wakametest_item"+i).textContent = item[i];
+	}
+	document.getElementById("js_wakametest_booster").textContent = booster_price.toLocaleString();
+}
+function relog(str){
+	log_num =0;
+	log(str);
+}
+function save(){
+	var save_array = new Array(8);
+	for(var i=0; i<7; i++){
+		save_array[i] = item[i]
+	}
+	save_array[7] = wakame;
+	writeCookieArray("wakamectest",save_array);
+}
+
+function saveOld(){
+	writeCookieArray("wct-wakame",wakame);
+	for(var i=0;i<7;i++){
+		writeCookie("wct-item"+i,item[i]);
+	}
+}
+function manualSave(){
+	save();
+	log("セーブしました。");
+}
+function load(){
+	var load_array = readCookieArray("wakamectest");
+	if(load_array==""){
+		loadOld();
+	} else {
+		for(var i=0; i<7; i++){
+			item[i] = parseInt(load_array[i]);
+		}
+		wakame = parseInt(load_array[7]);
+	}
+
+	booster_price = item[0]*item[0]*1000+1000;
+	if(item[6]==0){
+			document.getElementById("js_wakametest_mess").textContent = "わかめのふえ方はチート級かも？";
+	} else {
+			document.getElementById("js_wakametest_mess").textContent = "おめでとう！";
+	}
+
+	rewrite();
+	relog("ロードしました。");
+}
+function loadOld(){
+	wakame = parseInt(readCookie("wct-wakame"));
+	for(var i=0;i<7;i++){
+		item[i] = parseInt(readCookie("wct-item"+i));
+	}
+}
+window.buyItem = buyItem;
+window.manualSave = manualSave;
+window.load = load;
+window.Wakame = {ruinTheFun:ruinTheFun};
+//wakame end
+})();
+
+function tweetWakame(){
+	var str = "https://twitter.com/share?";
+	str += "url=https://potofu.github.io/r/%23wakamectest"
+	str += "&text="+wakame.toLocaleString()+"わかめ　わかめクリッカー（テスト版）｜冷凍ポトフ";
+	document.getElementById("js_wakame_tweet").href = str;
+}
+
+//oritatami.js
+var orit_html= 'div class="js_oritatami_orit" style="display:none;"';
+
+function switchOrit(number,rows){
+	var str = document.getElementById("js_oritatami_"+number).innerHTML;
+	if(str.indexOf(orit_html)==-1){
+		document.getElementById("js_oritatami_"+number).innerHTML = replaceAt(str,"br",rows,orit_html)+"</div>";
+		document.getElementById("js_oritatami_"+number+"_toggle").textContent = "もっとみる";
+		if(document.getElementById("js_oritatami_"+number).innerHTML.indexOf(orit_html)==-1){
+			document.getElementById("js_oritatami_"+number+"_toggle").style.display = "none";
+		}
+	} else {
+		document.getElementById("js_oritatami_"+number).innerHTML = (str.replace(orit_html,"br")).slice(0,str.length-5);
+		document.getElementById("js_oritatami_"+number+"_toggle").textContent = "もうみない";
+	}
+}
+switchOrit(1,5);
+
+function replaceAt(str,re,num,ns){
+	for(var i=0; i<num; i++){
+		str = str.replace(re,ns);
+	}
+	for(var i=0; i<num-1; i++){
+		str = str.replace(ns,re);
+	}
+	return str;
+}
+	</script>
+	</body>
+</html>
