@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>BMS &lt;-&gt; uP</title>
+<title>BMS &lt;-&gt; uP / Potofuarium</title>
 </head>
 <body>
-<input type="text" id="input" size="60">
+<div>
+<h1>BMS &lt;-&gt; unshifted-P</h1>
+<input type="text" id="input" size="60" value="1,2,4,4,3,6,6">
 <div id="output"></div>
+</div>
+<div>
+    &lt;<a href="/">index</a>
+</div>
 <script>
 var input = document.getElementById('input');
 var div = document.getElementById('output');
@@ -58,7 +64,7 @@ var onChange = function(){
 input.onkeydown = onChange;
 input.onkeyup = onChange;
 
-
+onChange();
 
 </script>
 </body>
