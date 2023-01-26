@@ -2,7 +2,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
 <title>Potofuarium</title>
+<style>
+table.social-links{
+    border-collapse: collapse;
+}
+
+table.social-links td{
+    border-style: solid;
+}
+tr.disabled-account td{
+    color: #ababab;
+    border-color: black;
+}
+</style>
 </head>
 <body>
 <header>
@@ -24,11 +38,12 @@
 <foorter>
 <h2>About</h2>
 Author: ポトフ
-<table>
+<table class="social-links">
 <tr><td>note</td><td><a href="https://note.com/potofu/">potofu</a></td></tr>
-<tr><td>巨大数研究Wiki (Fandom)</td><td><a href="https://googology.fandom.com/ja/wiki/ユーザー:ポトフ">ポトフ</a></td></tr>
-<tr><td>Mastodon</td><td><a rel="me" href="https://pawoo.net/@po_tofu">@po_tofu@pawoo.net</a></td></tr>
-<tr style="color:#ababab;"><td>Twitter</td><td>po_tau_feu</td></tr>
+<tr><td>巨大数研究 Wiki (Fandom)</td><td><a href="https://googology.fandom.com/ja/wiki/ユーザー:ポトフ">ポトフ</a></td></tr>
+<tr><td rowspan="2">Mastodon</td><td><a rel="me" href="https://pawoo.net/@po_tofu">@po_tofu@pawoo.net</a></td></tr>
+<tr><td><a rel="me" href="https://gochisou.photo/@potofu">@potofu@gochisou.photo</a></td></tr>
+<tr class="disabled-account"><td>Twitter</td><td>po_tau_feu</td></tr>
 </table>
 </footer>
 
