@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>FGO Servant coin calculator / Potofuarium</title>
+<style>
+table{
+    border-collapse: collapse;
+    margin-bottom: 0.3em;
+    min-width: 12.5em;
+}
+thead th,thead td{
+    background-color: black;
+    color: white;
+}
+table.required td{
+    text-align: center;
+    border: 1px solid;
+}
+table.required th{
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<h1>サーヴァントコイン計算機</h1>
+<div id="js_fgosc"></div>
+<div>
+    &lt;<a href="/">index</a>
+</div>
+<script src="/lib/document.js"></script>
+<script>
+const servantCoinCalculator = ((Library)=>{
+    "use strict";
+    const {ElementManager,SelectorMaker} = Library;
+    
+    const MASHU_BOND_MAX = 8;
+    const bond_coin_table = (()=>{
+        const ret = [0];
+        let sum = 0;
+        for (let i=1; i<=15; i++) {
+            if (i<=6) {
+                sum += 5;
+            } else if (i<=9) {
+                sum += 10;
+            } else {
+                sum += 20;
+            }
+            ret.push(sum);
+        }
+        return ret;
+    })();
+    
+    const bond_coin_table_mashu = (()=>{
+        const ret = [0];
+        let sum = 0;
+        for (let i=1; i<=15; i++) {
+            if (i<=4) {
+                sum += 10;
+            } else if (i<=8) {
+                sum += 20;
+            } else if (i<=12) {
+                sum += 30;
+            } else {
+                sum += 40;
+            }
+            ret.push(sum);
+        }
+        return ret;
+    })();
+    
+    const ServantCoinCalculator = {};
+    const sync = ()=>{
+        ServantCoinCalculator.sync&&ServantCoinCalculator.sync();
+    };
+    const update = ()=>{
+        ServantCoinCalculator.update&&ServantCoinCalculator.update();
+    }
+    const callbacks_sync = {change:sync};
+    const div_main = document.getElementById('js_fgosc');
+    const em_main = new ElementManager(div_main);
+    
+    const servantDataTableManager = (()=>{
+        const ServantDataTableManager = {};
+        const table_servant_data = em_main.add('table');
+        const thead = table_servant_data.add('thead');
+        thead.add('tr').add('th',{text:'サーヴァント',colSpan:2});
+        
+        const onselect = (e,ext)=>{
+            setServantType(ext['type']);
+        };
+        const select_servant = new SelectorMaker([
+            SelectorMaker.item('マシュ','mashu',{type:'mashu'},onselect),
+            SelectorMaker.SEP,
+            SelectorMaker.item('★5','90',{type:'summon'},onselect,true),
+            SelectorMaker.item('限定★4','50',{type:'summon'},onselect),
+            SelectorMaker.item('★4','30',{type:'summon'},onselect),
+            SelectorMaker.item('限定★3','30',{type:'summon'},onselect),
+            SelectorMaker.item('★3','15',{type:'summon'},onselect),
+            SelectorMaker.item('★2','6',{type:'summon'},onselect),
+            SelectorMaker.item('★1','2',{type:'summon'},onselect),
+            SelectorMaker.item('アンリマユ','6',{type:'summon'},onselect),
+            SelectorMaker.SEP,
+            SelectorMaker.item('配布','distributed',{type:'distributed'},onselect)
+        ],null,sync);
+        
+        const tbody_type = table_servant_data.add('tbody');
+        {
+            const tr = tbody_type.add('tr');
+            tr.add('th',{text:'種別'});
+            tr.add('td').append(select_servant.elem());
+        }
+        
+        const servantTypeObjects = {};
+        const createServantType = (type,tbody,earn,reset)=>{
+            servantTypeObjects[type] = {tbody,earn,reset};
+        };
+        let selected_servant_type = '';
+        const setServantType = type=>{
+            if (type===selected_servant_type) {
+                return;
+            }
+            while (tbody_type.next) {
+                tbody_type.next.free();
+            }
+            if (type==='mashu') {
+                ss_current.setMashu(true);
+                ss_target.setMashu(true);
+            } else if (selected_servant_type) {
+                ss_current.setMashu(false);
+                ss_target.setMashu(false);
+            }
+            const obj = servantTypeObjects[type];
+            if (obj) {
+                table_servant_data.append(obj.tbody);
+                selected_servant_type = type;
+                ServantDataTableManager.reset();
+            } else {
+                selected_servant_type = '';
+            }
+        };
+        ServantDataTableManager.earn = ()=>{
+            const obj = servantTypeObjects[selected_servant_type];
+            if (obj&&obj.earn) {
+                return obj.earn();
+            } else {
+                return 0;
+            }
+        };
+        ServantDataTableManager.earnEach = ()=>{
+            const value = select_servant.elem().value;
+            return parseInt(value,10)||0;
+        };
+        ServantDataTableManager.reset = ()=>{
+            const obj = servantTypeObjects[selected_servant_type];
+            if (obj&&obj.earn) {
+                return obj.reset();
+            } else {
+                return 0;
+            }
+        };
+        ServantDataTableManager.getType = ()=>{
+            return selected_servant_type;
+        };
+        {
+            const tbody = ElementManager.create('tbody');
+            createServantType('mashu',tbody);
+        }
+        {
+            const tbody = ElementManager.create('tbody');
+            const tr = tbody.add('tr');
+            const th = tr.add('th',{text:'人数'});
+            const td = tr.add('td');
+            const select = td.add('select',null,{change:e=>{
+                if (select.value==='manual') {
+                    td.append(input);
+                } else {
+                    input.free();
+                    input.value = select.value;
+                    sync();
+                }
+            }});
+            [0,1,2,3,4,5,6,10,16,32,80,240].forEach(e=>{
+                select.add('option',{label:e,value:e});
+            });
+            select.add('hr');
+            select.add('option',{label:'入力',value:'manual'},callbacks_sync);
+            const input = ElementManager.create('input',{value:0,size:4},callbacks_sync);
+            createServantType('summon',tbody,()=>parseInt(input.value,10)*parseInt(select_servant.elem().value,10)||0,()=>{
+                input.value = 0;
+                select.value = 0;
+            });
+        }
+        {
+            const tbody = ElementManager.create('tbody');
+            const checks = [];
+            {
+                const tr = tbody.add('tr');
+                const th = tr.add('th',{text:'イベント'});
+                const td = tr.add('td');
+                const label = td.add('label');
+                const check = label.add('input',{type:'checkbox'},callbacks_sync);
+                checks.push(check);
+                const text = label.addText('交換');
+            }
+            {
+                const tr = tbody.add('tr');
+                const th = tr.add('th',{text:'巡礼'});
+                const td = tr.add('td');
+                const label = td.add('label');
+                const check = label.add('input',{type:'checkbox'},callbacks_sync);
+                checks.push(check);
+                const text = label.addText('交換');
+            }
+            createServantType('distributed',tbody,()=>checks.reduce((p,e)=>p+(e.getValue('checked')?480:0),0),()=>checks.forEach(e=>e.setValue('checked',false)));
+        }
+        select_servant.select();
+        
+        return ServantDataTableManager;
+    })();
+    const getLevelSelector = (()=>{
+        const list_first = [
+            SelectorMaker.item('Lv.120','300'),
+            SelectorMaker.item('Lv.110','150'),
+            SelectorMaker.item('Lv.100以下','0',null,null,true),
+            ...[1,2,3,4,5,6,7,8,9,10].map(e=>SelectorMaker.item('Lv.'+(100+e*2),e*30))
+        ];
+        const list_extra = [
+            ...list_first.slice(0,2),
+            SelectorMaker.item('-','0',null,null,true),
+            SelectorMaker.item('Lv.100以下','0'),
+            ...list_first.slice(-10)
+        ];
+        return (callback,is_extra)=>new SelectorMaker(is_extra?list_extra:list_first,null,callback);
+    })();
+    const getBondCoin = (level,is_mashu)=>{
+        if (is_mashu) {
+            if (level>MASHU_BOND_MAX) {
+                return bond_coin_table_mashu[MASHU_BOND_MAX];
+            }
+            return bond_coin_table_mashu[level];
+        }
+        return bond_coin_table[level];
+    };
+    const ServantStatus = function(is_current){
+        const table = this._table = ElementManager.create('table');
+        this._is_current = is_current
+        this._is_mashu = false;
+        const thead = table.add('thead');
+        {
+            const tr = thead.add('tr');
+            tr.add('th',{text:is_current?'現在':'目標',colSpan:2});
+        }
+        const tbody = table.add('tbody');
+        if (is_current) {
+            const tr = tbody.add('tr');
+            tr.add('th',{text:'絆'});
+            const td = this._td_bond = tr.add('td');
+            
+            const select = this._select_bond = td.add('select',null,callbacks_sync);
+            
+            [15,14,10,9,5,'hr',0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].forEach(e=>{
+                if (e==='hr') {
+                    select.add('hr');
+                } else {
+                    select.add('option',{label:'Lv.'+e,value:e,selected:!e});
+                }
+            });
+            
+            const select_mashu = this._select_mashu = ElementManager.create('select',null,callbacks_sync);
+            [8,'hr',0,1,2,3,4,5,6,7,8].forEach(e=>{
+                if (e==='hr') {
+                    select_mashu.add('hr');
+                } else {
+                    select_mashu.add('option',{label:'Lv.'+e,value:e,selected:!e});
+                }
+            });
+        }
+        {
+            const tr = tbody.add('tr');
+            const th = tr.add('th',{text:'アペンド'});
+            const td = tr.add('td');
+            const inputs = this._inputs_append = [1,2,3].map(e=>td.add('input',{type:'checkbox',checked:!is_current&&e===2},is_current?callbacks_sync:{change:update}));
+        }
+        this._selectors_level = [1,2,3].map(e=>{
+            const tr = tbody.add('tr');
+            tr.add('th',{text:e+'人目'});
+            const td_level = tr.add('td');
+            const selector = getLevelSelector(is_current?sync:update,e!==1);
+            td_level.append(selector.elem());
+            return selector;
+        });
+    };
+    ServantStatus.prototype.elem = function(){
+        return this._table;
+    };
+    ServantStatus.prototype.getInfo = function(){
+        return {
+            bond:this._is_current?parseInt(this._is_mashu?this._select_mashu.value:this._select_bond.value,10):0,
+            append:this._inputs_append.map(input=>input.getValue('checked')),
+            level:this._selectors_level.map(selector=>parseInt(selector.elem().value,10))
+        };
+    };
+    ServantStatus.prototype.earn = function(status){
+        const info = this.getInfo();
+        if (status) {
+            const info_sub = status.getInfo();
+            if (info_sub.bond>info.bond) {
+                info.bond = info_sub.bond
+            }
+        }
+        return getBondCoin(info.bond,this._is_mashu);
+    };
+    ServantStatus.prototype.use = function(status){
+        const info = this.getInfo();
+        if (status) {
+            const info_sub = status.getInfo();
+            [1,2,3].forEach((e,i)=>{
+                info.append[i] = info.append[i]||info_sub.append[i];
+                if (info_sub.level[i] > info.level[i]) {
+                    info.level[i] = info_sub.level[i];
+                }
+            });
+        }
+        return info.append.reduce((p,e)=>e?p+120:p,0)+info.level.reduce((p,e)=>p+e,0);
+    };
+    ServantStatus.prototype.reset = function(){
+        this._select.value = 0;
+        this._select_mashu.value = 0;
+        this._inputs_append.forEach(input=>{
+            input.setValue('checked',false);
+        });
+        this._selectors_level.forEach(selector=>{
+            selector.elem().value = 0;
+        })
+    };
+    ServantStatus.prototype.setMashu = function(is_mashu){
+        if (this._is_current) {
+            if (is_mashu) {
+                this._select_bond.free();
+                this._select_bond.value = 0;
+                this._td_bond.append(this._select_mashu);
+            } else {
+                this._select_mashu.free();
+                this._select_mashu.value = 0;
+                this._td_bond.append(this._select_bond);
+            }
+        }
+        this._selectors_level.forEach(selector=>{
+            const select = selector.elem();
+            if (is_mashu) {
+                select.value = 0;
+                select.setValue('disabled',true);
+            } else {
+                select.setValue('disabled',false);
+            }
+        });
+        this._is_mashu = is_mashu;
+    };
+    const ss_current = new ServantStatus(true);
+    em_main.append(ss_current._table);
+    
+    {
+        const table = em_main.add('table');
+        const thead = table.add('thead');
+        {
+            const tr = thead.add('tr');
+            const th = tr.add('th',{text:'コイン',colSpan:2});
+        }
+        const tbody = table.add('tbody');
+        const inputs = {};
+        {
+            const tr = tbody.add('tr');
+            const th = tr.add('th',{text:'入手数'});
+            const td = tr.add('td');
+            inputs['earn'] = td.add('input',{value:0,size:4,readOnly:true});
+        }
+        {
+            const tr = tbody.add('tr');
+            const th = tr.add('th',{text:'使用数'});
+            const td = tr.add('td');
+            inputs['use'] = td.add('input',{value:0,size:4,readOnly:true});
+        }
+        {
+            const tr = tbody.add('tr');
+            const th = tr.add('th',{text:'残数'});
+            const td = tr.add('td');
+            inputs['stock'] = td.add('input',{value:0,size:4},{change:e=>{
+                inputs['auto'].setValue('checked',false);
+                update();
+            }});
+            const label = td.add('label');
+            inputs['auto'] = label.add('input',{type:'checkbox',checked:true},callbacks_sync);
+            label.addText('自動計算');
+        }
+        ServantCoinCalculator.getEarnedCoin = ()=>{
+            return parseInt(inputs['stock'].value,10)||0;
+        };
+        ServantCoinCalculator.sync = ()=>{
+            const earned = servantDataTableManager.earn()+ss_current.earn()
+            inputs['earn'].value = earned;
+            const used = ss_current.use();
+            inputs['use'].value = used;
+            if (inputs['auto'].getValue('checked')) {
+                inputs['stock'].value = earned-used;
+            }
+            update();
+        };
+    }
+    
+    const ss_target = new ServantStatus(false);
+    em_main.append(ss_target._table);
+    
+    {
+        const table = em_main.add('table',{className:'required'});
+        {
+            const thead = table.add('thead');
+            const tr = thead.add('tr');
+            tr.add('th',{text:'絆'});
+            tr.add('th',{text:'不足枚数'});
+            tr.add('th',{text:'必要人数'});
+        }
+        const tbody = table.add('tbody');
+        const trs = Array(16);
+        const tds_coin = Array(16);
+        const tds_summon = Array(16);
+        [15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0].forEach(lv=>{
+            trs[lv] = tbody.add('tr');
+            trs[lv].add('td',{text:'Lv.'+lv});
+            tds_coin[lv] = trs[lv].add('td');
+            tds_summon[lv] = trs[lv].add('td');
+        });
+        
+        ServantCoinCalculator.update = function(){
+            const servant_type = servantDataTableManager.getType();
+            const current_info = ss_current.getInfo();
+            const is_mashu = servant_type==='mashu';
+            const bond_coin_each = servantDataTableManager.earnEach();
+            
+            const earned_coin = ServantCoinCalculator.getEarnedCoin();
+            const earned_bond_coin = getBondCoin(current_info.bond,is_mashu);
+            const neccesary_coin = ss_target.use(ss_current)-ss_current.use();
+            
+            trs.forEach((tr,lv)=>{
+                const td_coin = tds_coin[lv];
+                const td_summon = tds_summon[lv];
+                const shortage = neccesary_coin-earned_coin-getBondCoin(lv,is_mashu)+earned_bond_coin;
+                if (shortage>=0) {
+                    td_coin.text = shortage + '枚';
+                } else {
+                    td_coin.text = '0枚';
+                }
+                if (bond_coin_each) {
+                    const n = Math.ceil(shortage/bond_coin_each);
+                    if (n>0) {
+                        td_summon.text = n+'人';
+                    } else {
+                        td_summon.text = '-';
+                    }
+                } else {
+                    td_summon.text = '-';
+                }
+                
+                if (servant_type==='mashu'&&lv>MASHU_BOND_MAX || current_info.bond > lv) {
+                    tr.setStyle({display: 'none'});
+                } else {
+                    tr.setStyle({display: ''});
+                    if (shortage > 0) {
+                        if (bond_coin_each) {
+                            tr.setStyle({backgroundColor: ''});
+                        } else {
+                            tr.setStyle({backgroundColor: '#cccccc'});
+                        }
+                    } else {
+                        tr.setStyle({backgroundColor: '#ccffcc'});
+                    }
+                }
+            });
+        };
+        update();
+    }
+    
+    return ServantCoinCalculator;
+})(window.libraries['Document']);
+</script>
+</body>
+</html>
+
