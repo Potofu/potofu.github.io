@@ -316,8 +316,10 @@ const servantCoinCalculator = ((Library)=>{
         const info = this.getInfo();
         if (status) {
             const info_sub = status.getInfo();
-            [1,2,3].forEach((e,i)=>{
+            [1,2,3,4,5].forEach((e,i)=>{
                 info.append[i] = info.append[i]||info_sub.append[i];
+            });
+            [1,2,3].forEach((e,i)=>{
                 if (info_sub.level[i] > info.level[i]) {
                     info.level[i] = info_sub.level[i];
                 }
