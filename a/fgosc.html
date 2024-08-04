@@ -281,7 +281,7 @@ const servantCoinCalculator = ((Library)=>{
             const tr = tbody.add('tr');
             const th = tr.add('th',{text:'アペンド'});
             const td = tr.add('td');
-            const inputs = this._inputs_append = [1,2,3].map(e=>td.add('input',{type:'checkbox',checked:!is_current&&e===2},is_current?callbacks_sync:{change:update}));
+            const inputs = this._inputs_append = [1,2,3,4,5].map(e=>td.add('input',{type:'checkbox',checked:!is_current&&e===2},is_current?callbacks_sync:{change:update}));
         }
         this._selectors_level = [1,2,3].map(e=>{
             const tr = tbody.add('tr');
