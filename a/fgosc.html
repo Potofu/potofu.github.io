@@ -43,9 +43,13 @@ const servantCoinCalculator = ((Library)=>{
             if (i<=6) {
                 sum += 5;
             } else if (i<=9) {
-                sum += 10;
-            } else {
                 sum += 20;
+            } else if (i===10) {
+                sum += 40;
+            } else if (i===11) {
+                sum += 50;
+            } else {
+                sum += 60;
             }
             ret.push(sum);
         }
@@ -56,14 +60,16 @@ const servantCoinCalculator = ((Library)=>{
         const ret = [0];
         let sum = 0;
         for (let i=1; i<=15; i++) {
-            if (i<=4) {
+            if (i<=2) {
                 sum += 10;
-            } else if (i<=8) {
+            } else if (i<=4) {
                 sum += 20;
-            } else if (i<=12) {
+            } else if (i<=6) {
                 sum += 30;
-            } else {
+            } else if (i<=9){
                 sum += 40;
+            } else {
+                sum += 60;
             }
             ret.push(sum);
         }
@@ -185,7 +191,7 @@ const servantCoinCalculator = ((Library)=>{
                 select.add('option',{label:e,value:e});
             });
             select.add('hr');
-            select.add('option',{label:'入力',value:'manual'},callbacks_sync);
+            select.add('option',{label:'入力',value:'manual'});
             const input = ElementManager.create('input',{value:0,size:4},callbacks_sync);
             createServantType('summon',tbody,()=>parseInt(input.value,10)*parseInt(select_servant.elem().value,10)||0,()=>{
                 input.value = 0;
@@ -269,7 +275,13 @@ const servantCoinCalculator = ((Library)=>{
             });
             
             const select_mashu = this._select_mashu = ElementManager.create('select',null,callbacks_sync);
-            [8,'hr',0,1,2,3,4,5,6,7,8].forEach(e=>{
+            const mashu_bond_list = [];
+            mashu_bond_list.push(MASHU_BOND_MAX);
+            mashu_bond_list.push('hr');
+            for (let i=0; i<=MASHU_BOND_MAX; i++) {
+                mashu_bond_list.push(i);
+            }
+            mashu_bond_list.forEach(e=>{
                 if (e==='hr') {
                     select_mashu.add('hr');
                 } else {
