@@ -326,18 +326,20 @@ const servantCoinCalculator = ((Library)=>{
     };
     ServantStatus.prototype.use = function(status){
         const info = this.getInfo();
+        let append = info.append.reduce((p,e)=>e?p+120:p,0)
         if (status) {
             const info_sub = status.getInfo();
-            [1,2,3,4,5].forEach((e,i)=>{
-                info.append[i] = info.append[i]||info_sub.append[i];
-            });
+            const append_sub = info_sub.append.reduce((p,e)=>e?p+120:p,0)
+            if (append_sub>append) {
+                append = append_sub;
+            }
             [1,2,3].forEach((e,i)=>{
                 if (info_sub.level[i] > info.level[i]) {
                     info.level[i] = info_sub.level[i];
                 }
             });
         }
-        return info.append.reduce((p,e)=>e?p+120:p,0)+info.level.reduce((p,e)=>p+e,0);
+        return append+info.level.reduce((p,e)=>p+e,0);
     };
     ServantStatus.prototype.reset = function(){
         this._select.value = 0;
