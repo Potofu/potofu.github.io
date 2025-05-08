@@ -35,7 +35,7 @@ const servantCoinCalculator = ((Library)=>{
     "use strict";
     const {ElementManager,SelectorMaker} = Library;
     
-    const MASHU_BOND_MAX = 9;
+    const MASHU_BOND_MAX = 10;
     const bond_coin_table = (()=>{
         const ret = [0];
         let sum = 0;
@@ -171,7 +171,28 @@ const servantCoinCalculator = ((Library)=>{
         };
         {
             const tbody = ElementManager.create('tbody');
-            createServantType('mashu',tbody);
+            const tr = tbody.add('tr');
+            const th = tr.add('th',{text:'ミッション'});
+            const td = tr.add('td');
+            const select = td.add('select',null,{change:e=>{
+                if (select.value==='manual') {
+                    td.append(input);
+                } else {
+                    input.free();
+                    input.value = select.value;
+                    sync();
+                }
+            }});
+            [0,150,300].forEach(e=>{
+                select.add('option',{label:e,value:e});
+            });
+            select.add('hr');
+            select.add('option',{label:'入力',value:'manual'});
+            const input = ElementManager.create('input',{value:0,size:4},callbacks_sync);
+            createServantType('mashu',tbody,()=>Math.min(parseInt(input.value,10),300)||0,()=>{
+                input.value = 0;
+                select.value = 0;
+            });
         }
         {
             const tbody = ElementManager.create('tbody');
@@ -363,13 +384,15 @@ const servantCoinCalculator = ((Library)=>{
                 this._td_bond.append(this._select_bond);
             }
         }
-        this._selectors_level.forEach(selector=>{
-            const select = selector.elem();
-            if (is_mashu) {
-                select.value = 0;
-                select.setValue('disabled',true);
-            } else {
-                select.setValue('disabled',false);
+        this._selectors_level.forEach((selector,i)=>{
+            if (i!==0) {
+                const select = selector.elem();
+                if (is_mashu) {
+                    select.value = 0;
+                    select.setValue('disabled',true);
+                } else {
+                    select.setValue('disabled',false);
+                }
             }
         });
         this._is_mashu = is_mashu;
